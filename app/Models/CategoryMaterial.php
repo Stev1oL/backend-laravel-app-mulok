@@ -12,4 +12,14 @@ class CategoryMaterial extends Model
     protected $fillable = [
         'nama_kategori',
     ];
+
+    public function imageMaterial()
+    {
+        return $this->hasMany(ImageMaterial::class, 'id');
+    }
+
+    public function textMaterial()
+    {
+        return $this->hasMany(TextMaterial::class, 'id');
+    }
 }

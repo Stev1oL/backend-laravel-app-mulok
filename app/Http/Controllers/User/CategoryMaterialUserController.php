@@ -10,7 +10,10 @@ class CategoryMaterialUserController extends Controller
 {
     public function getCategory($id)
     {
-        $category = CategoryMaterial::findOrFail($id);
+        $category = CategoryMaterial::with([
+            'imageMaterial',
+            'textMaterial'
+        ])->findOrFail($id);
         if (!$category) {
             return response()->json([
                 'status' => false,
@@ -26,7 +29,10 @@ class CategoryMaterialUserController extends Controller
 
     public function getAllCategory()
     {
-        $category = CategoryMaterial::all();
+        $category = CategoryMaterial::with([
+            'imageMaterial',
+            'textMaterial'
+        ])->get();
         if (!$category) {
             return response()->json([
                 'status' => false,

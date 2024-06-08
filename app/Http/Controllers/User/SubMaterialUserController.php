@@ -10,7 +10,12 @@ class SubMaterialUserController extends Controller
 {
     public function getSubMaterial($id)
     {
-        $submaterial = SubMaterial::findOrFail($id);
+        $submaterial = SubMaterial::with([
+            'material',
+            'textMaterial',
+            'groupTextMaterial',
+            'imageMaterial'
+        ])->findOrFail($id);
 
         if (!$submaterial) {
             return response()->json([
@@ -28,7 +33,12 @@ class SubMaterialUserController extends Controller
     public function getAllSubMaterial(Request $request)
     {
         $perPage = $request->input('page', 10);
-        $submaterial = SubMaterial::paginate($perPage);
+        $submaterial = SubMaterial::with([
+            'material',
+            'textMaterial',
+            'groupTextMaterial',
+            'imageMaterial'
+        ])->paginate($perPage);
 
         if (!$submaterial) {
             return response()->json([

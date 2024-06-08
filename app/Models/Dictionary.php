@@ -18,6 +18,6 @@ class Dictionary extends Model
 
     public function subChapter()
     {
-        return $this->belongsTo(SubChapter::class);
+        return $this->belongsTo(SubChapter::class, 'id_sub_bab');
     }
 }
