@@ -12,4 +12,9 @@ class Semester extends Model
     protected $fillable = [
         'semester',
     ];
+
+    public function students()
+    {
+        return $this->hasMany(Student::class, 'id');
+    }
 }

@@ -19,4 +19,19 @@ class SubMaterial extends Model
     {
         return $this->belongsTo(Material::class);
     }
+
+    public function textMaterial()
+    {
+        return $this->hasMany(TextMaterial::class, 'id');
+    }
+
+    public function groupTextMaterial()
+    {
+        return $this->hasMany(GroupTextMaterial::class, 'id');
+    }
+
+    public function imageMaterial()
+    {
+        return $this->hasMany(ImageMaterial::class, 'id');
+    }
 }

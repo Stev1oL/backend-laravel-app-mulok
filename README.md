@@ -261,7 +261,24 @@ Example success Responds:
         "judul_bab": "1",
         "id_semester": 1,
         "created_at": "2024-06-08T05:05:04.000000Z",
-        "updated_at": "2024-06-08T05:05:04.000000Z"
+        "updated_at": "2024-06-08T05:05:04.000000Z",
+        "semester": {
+            "id": 1,
+            "semester": "1",
+            "created_at": "2024-06-08T05:03:58.000000Z",
+            "updated_at": "2024-06-08T05:03:58.000000Z"
+        },
+        "sub_chapters": [
+            {
+                "id": 1,
+                "nomor_sub_bab": "1",
+                "judul_sub_bab": "1",
+                "gambar": "https://res.cloudinary.com/dtjkuzlr2/image/upload/v1717823124/oojmkllmqpchfkmrtxoe.png",
+                "id_bab": 1,
+                "created_at": "2024-06-08T05:05:23.000000Z",
+                "updated_at": "2024-06-08T05:05:23.000000Z"
+            }
+        ]
     }
 }
 ```
@@ -286,7 +303,24 @@ Example success Responds:
                 "judul_bab": "1",
                 "id_semester": 1,
                 "created_at": "2024-06-08T05:05:04.000000Z",
-                "updated_at": "2024-06-08T05:05:04.000000Z"
+                "updated_at": "2024-06-08T05:05:04.000000Z",
+                "semester": {
+                    "id": 1,
+                    "semester": "1",
+                    "created_at": "2024-06-08T05:03:58.000000Z",
+                    "updated_at": "2024-06-08T05:03:58.000000Z"
+                },
+                "sub_chapters": [
+                    {
+                        "id": 1,
+                        "nomor_sub_bab": "1",
+                        "judul_sub_bab": "1",
+                        "gambar": "https://res.cloudinary.com/dtjkuzlr2/image/upload/v1717823124/oojmkllmqpchfkmrtxoe.png",
+                        "id_bab": 1,
+                        "created_at": "2024-06-08T05:05:23.000000Z",
+                        "updated_at": "2024-06-08T05:05:23.000000Z"
+                    }
+                ]
             },
             {
                 "id": 2,
@@ -294,13 +328,20 @@ Example success Responds:
                 "judul_bab": "2",
                 "id_semester": 1,
                 "created_at": "2024-06-08T05:05:09.000000Z",
-                "updated_at": "2024-06-08T05:05:09.000000Z"
+                "updated_at": "2024-06-08T05:05:09.000000Z",
+                "semester": {
+                    "id": 1,
+                    "semester": "1",
+                    "created_at": "2024-06-08T05:03:58.000000Z",
+                    "updated_at": "2024-06-08T05:03:58.000000Z"
+                },
+                "sub_chapters": []
             }
         ],
-        "first_page_url": "http://127.0.0.1:8000/api/chapters?page=1",
+        "first_page_url": "http://127.0.0.1:8000/api/user/chapters?page=1",
         "from": 1,
         "last_page": 1,
-        "last_page_url": "http://127.0.0.1:8000/api/chapters?page=1",
+        "last_page_url": "http://127.0.0.1:8000/api/user/chapters?page=1",
         "links": [
             {
                 "url": null,
@@ -308,7 +349,7 @@ Example success Responds:
                 "active": false
             },
             {
-                "url": "http://127.0.0.1:8000/api/chapters?page=1",
+                "url": "http://127.0.0.1:8000/api/user/chapters?page=1",
                 "label": "1",
                 "active": true
             },
@@ -319,7 +360,7 @@ Example success Responds:
             }
         ],
         "next_page_url": null,
-        "path": "http://127.0.0.1:8000/api/chapters",
+        "path": "http://127.0.0.1:8000/api/user/chapters",
         "per_page": 10,
         "prev_page_url": null,
         "to": 2,
@@ -348,21 +389,30 @@ Example success Responds:
                 "judul_bab": "1",
                 "id_semester": 1,
                 "created_at": "2024-06-08T05:05:04.000000Z",
-                "updated_at": "2024-06-08T05:05:04.000000Z"
-            },
-            {
-                "id": 2,
-                "nomor_bab": "2",
-                "judul_bab": "2",
-                "id_semester": 1,
-                "created_at": "2024-06-08T05:05:09.000000Z",
-                "updated_at": "2024-06-08T05:05:09.000000Z"
+                "updated_at": "2024-06-08T05:05:04.000000Z",
+                "semester": {
+                    "id": 1,
+                    "semester": "1",
+                    "created_at": "2024-06-08T05:03:58.000000Z",
+                    "updated_at": "2024-06-08T05:03:58.000000Z"
+                },
+                "sub_chapters": [
+                    {
+                        "id": 1,
+                        "nomor_sub_bab": "1",
+                        "judul_sub_bab": "1",
+                        "gambar": "https://res.cloudinary.com/dtjkuzlr2/image/upload/v1717823124/oojmkllmqpchfkmrtxoe.png",
+                        "id_bab": 1,
+                        "created_at": "2024-06-08T05:05:23.000000Z",
+                        "updated_at": "2024-06-08T05:05:23.000000Z"
+                    }
+                ]
             }
         ],
-        "first_page_url": "http://127.0.0.1:8000/api/chapters?page=1",
+        "first_page_url": "http://127.0.0.1:8000/api/user/chapters?page=1",
         "from": 1,
-        "last_page": 1,
-        "last_page_url": "http://127.0.0.1:8000/api/chapters?page=1",
+        "last_page": 2,
+        "last_page_url": "http://127.0.0.1:8000/api/user/chapters?page=2",
         "links": [
             {
                 "url": null,
@@ -370,21 +420,26 @@ Example success Responds:
                 "active": false
             },
             {
-                "url": "http://127.0.0.1:8000/api/chapters?page=1",
+                "url": "http://127.0.0.1:8000/api/user/chapters?page=1",
                 "label": "1",
                 "active": true
             },
             {
-                "url": null,
+                "url": "http://127.0.0.1:8000/api/user/chapters?page=2",
+                "label": "2",
+                "active": false
+            },
+            {
+                "url": "http://127.0.0.1:8000/api/user/chapters?page=2",
                 "label": "Next &raquo;",
                 "active": false
             }
         ],
-        "next_page_url": null,
-        "path": "http://127.0.0.1:8000/api/chapters",
-        "per_page": 10,
+        "next_page_url": "http://127.0.0.1:8000/api/user/chapters?page=2",
+        "path": "http://127.0.0.1:8000/api/user/chapters",
+        "per_page": 1,
         "prev_page_url": null,
-        "to": 2,
+        "to": 1,
         "total": 2
     }
 }
@@ -409,7 +464,35 @@ Example success Responds:
         "gambar": "https://res.cloudinary.com/dtjkuzlr2/image/upload/v1717823124/oojmkllmqpchfkmrtxoe.png",
         "id_bab": 1,
         "created_at": "2024-06-08T05:05:23.000000Z",
-        "updated_at": "2024-06-08T05:05:23.000000Z"
+        "updated_at": "2024-06-08T05:05:23.000000Z",
+        "chapter": {
+            "id": 1,
+            "nomor_bab": "1",
+            "judul_bab": "1",
+            "id_semester": 1,
+            "created_at": "2024-06-08T05:05:04.000000Z",
+            "updated_at": "2024-06-08T05:05:04.000000Z"
+        },
+        "materials": [
+            {
+                "id": 1,
+                "judul_materi": "judul1",
+                "id_sub_bab": 1,
+                "created_at": "2024-06-08T05:06:22.000000Z",
+                "updated_at": "2024-06-08T05:06:22.000000Z"
+            }
+        ],
+        "dictionary": [
+            {
+                "id": 1,
+                "bahasa_dayak": "ikau",
+                "terjemahan": "kamu",
+                "audio": "https://res.cloudinary.com/dtjkuzlr2/video/upload/v1717823349/mjsgm6syvwjcokkdtjif.mp3",
+                "id_sub_bab": 1,
+                "created_at": "2024-06-08T05:09:07.000000Z",
+                "updated_at": "2024-06-08T05:09:07.000000Z"
+            }
+        ]
     }
 }
 ```
@@ -435,7 +518,35 @@ Example success Responds:
                 "gambar": "https://res.cloudinary.com/dtjkuzlr2/image/upload/v1717823124/oojmkllmqpchfkmrtxoe.png",
                 "id_bab": 1,
                 "created_at": "2024-06-08T05:05:23.000000Z",
-                "updated_at": "2024-06-08T05:05:23.000000Z"
+                "updated_at": "2024-06-08T05:05:23.000000Z",
+                "chapter": {
+                    "id": 1,
+                    "nomor_bab": "1",
+                    "judul_bab": "1",
+                    "id_semester": 1,
+                    "created_at": "2024-06-08T05:05:04.000000Z",
+                    "updated_at": "2024-06-08T05:05:04.000000Z"
+                },
+                "materials": [
+                    {
+                        "id": 1,
+                        "judul_materi": "judul1",
+                        "id_sub_bab": 1,
+                        "created_at": "2024-06-08T05:06:22.000000Z",
+                        "updated_at": "2024-06-08T05:06:22.000000Z"
+                    }
+                ],
+                "dictionary": [
+                    {
+                        "id": 1,
+                        "bahasa_dayak": "ikau",
+                        "terjemahan": "kamu",
+                        "audio": "https://res.cloudinary.com/dtjkuzlr2/video/upload/v1717823349/mjsgm6syvwjcokkdtjif.mp3",
+                        "id_sub_bab": 1,
+                        "created_at": "2024-06-08T05:09:07.000000Z",
+                        "updated_at": "2024-06-08T05:09:07.000000Z"
+                    }
+                ]
             }
         ],
         "first_page_url": "http://127.0.0.1:8000/api/user/subbab?page=1",

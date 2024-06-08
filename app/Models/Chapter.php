@@ -17,6 +17,11 @@ class Chapter extends Model
 
     public function semester()
     {
-        return $this->belongsTo(Semester::class);
+        return $this->belongsTo(Semester::class, 'id_semester');
+    }
+
+    public function subChapters()
+    {
+        return $this->hasMany(SubChapter::class, 'id');
     }
 }

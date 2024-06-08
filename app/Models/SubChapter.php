@@ -18,6 +18,16 @@ class SubChapter extends Model
 
     public function chapter()
     {
-        return $this->belongsTo(Chapter::class);
+        return $this->belongsTo(Chapter::class, 'id_bab');
+    }
+
+    public function materials()
+    {
+        return $this->hasMany(Material::class, 'id');
+    }
+
+    public function dictionary()
+    {
+        return $this->hasMany(Dictionary::class, 'id');
     }
 }

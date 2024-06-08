@@ -10,7 +10,11 @@ class SubChapterUserController extends Controller
 {
     public function getSubChapter($id)
     {
-        $subchapter = SubChapter::findOrFail($id);
+        $subchapter = SubChapter::with([
+            'chapter',
+            'materials',
+            'dictionary'
+        ])->findOrFail($id);
 
         if (!$subchapter) {
             return response()->json([
@@ -28,7 +32,11 @@ class SubChapterUserController extends Controller
     public function getAllSubChapter(Request $request)
     {
         $perPage = $request->input('page', 10);
-        $subchapter = SubChapter::paginate($perPage);
+        $subchapter = SubChapter::with([
+            'chapter',
+            'materials',
+            'dictionary'
+        ])->paginate($perPage);
 
         if (!$subchapter) {
             return response()->json([

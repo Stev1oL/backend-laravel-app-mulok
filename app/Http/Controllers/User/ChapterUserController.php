@@ -5,42 +5,49 @@ namespace App\Http\Controllers\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Chapter;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class ChapterUserController extends Controller
 {
     public function getChapter($id)
     {
-        $chapter = Chapter::findOrFail($id);
+        try {
+            $chapter = Chapter::with([
+                'semester',
+                'subChapters'
+            ])->findOrFail($id);
 
-        if (!$chapter) {
+            return response()->json([
+                'status' => true,
+                'data' => $chapter
+            ], 200);
+        } catch (ModelNotFoundException $e) {
             return response()->json([
                 'status' => false,
                 'message' => 'Chapter not found'
             ], 404);
         }
-
-        return response()->json([
-            'status' => true,
-            'data' => $chapter
-        ], 200);
     }
 
     public function getAllChapter(Request $request)
     {
         $perPage = $request->input('page', 10);
-        $chapter = Chapter::paginate($perPage);
+        $chapters = Chapter::with([
+            'semester',
+            'subChapters'
+        ])->paginate($perPage);
 
-        if (!$chapter) {
+        if ($chapters->isEmpty()) {
             return response()->json([
                 'status' => false,
-                'message' => 'Chapter not found'
+                'message' => 'Chapters not found'
             ], 404);
         }
 
         return response()->json([
             'status' => true,
             'message' => 'All chapters',
-            'data' => $chapter
+            'data' => $chapters
         ], 200);
     }
 }

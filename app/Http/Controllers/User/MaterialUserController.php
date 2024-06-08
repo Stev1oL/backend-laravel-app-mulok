@@ -10,7 +10,10 @@ class MaterialUserController extends Controller
 {
     public function getMaterial($id)
     {
-        $material = Material::findOrFail($id);
+        $material = Material::with([
+            'subChapter',
+            'subMaterial'
+        ])->findOrFail($id);
 
         if (!$material) {
             return response()->json([
@@ -28,7 +31,10 @@ class MaterialUserController extends Controller
     public function getAllMaterial(Request $request)
     {
         $perPage = $request->input('page', 10);
-        $material = Material::paginate($perPage);
+        $material = Material::with([
+            'subChapter',
+            'subMaterial'
+        ])->paginate($perPage);
 
         if (!$material) {
             return response()->json([

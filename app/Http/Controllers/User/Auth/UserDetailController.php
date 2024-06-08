@@ -14,11 +14,14 @@ class UserDetailController extends Controller
     public function getUserMobile()
     {
         $user = Auth::user();
+        $user = Student::with('semester')->find($user->id);
+
         return response()->json([
             'id' => $user->id,
             'nama' => $user->nama,
             'username' => $user->username,
-            'password' => $user->password
+            'password' => $user->password,
+            'semester' => $user->semester
         ]);
     }
 

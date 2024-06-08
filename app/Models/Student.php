@@ -42,6 +42,6 @@ class Student extends Authenticatable
 
     public function semester()
     {
-        return $this->belongsTo(Semester::class);
+        return $this->belongsTo(Semester::class, 'id_semester');
     }
 }
