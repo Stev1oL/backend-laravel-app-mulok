@@ -113,7 +113,7 @@ Example success Responds:
 
 > GET `http://localhost:8000/api/chapter/{id}`
 
-Example suceess Responds:
+Example success Responds:
 
 ```JSON
 {
@@ -138,7 +138,7 @@ Example suceess Responds:
 
 > GET `http://localhost:8000/api/user/chapter/{id}`
 
-Example suceess Responds:
+Example success Responds:
 
 ```JSON
 {
@@ -159,7 +159,69 @@ Example suceess Responds:
 
 > GET `http://localhost:8000/api/user/chapters`
 
-Example suceess Responds:
+Example success Responds:
+
+```JSON
+{
+    "response": 200,
+    "status": true,
+    "message": "All chapters",
+    "data": {
+        "current_page": 1,
+        "data": [
+            {
+                "id": 1,
+                "nomor_bab": "1",
+                "judul_bab": "1",
+                "id_semester": 1,
+                "created_at": "2024-06-08T05:05:04.000000Z",
+                "updated_at": "2024-06-08T05:05:04.000000Z"
+            },
+            {
+                "id": 2,
+                "nomor_bab": "2",
+                "judul_bab": "2",
+                "id_semester": 1,
+                "created_at": "2024-06-08T05:05:09.000000Z",
+                "updated_at": "2024-06-08T05:05:09.000000Z"
+            }
+        ],
+        "first_page_url": "http://127.0.0.1:8000/api/chapters?page=1",
+        "from": 1,
+        "last_page": 1,
+        "last_page_url": "http://127.0.0.1:8000/api/chapters?page=1",
+        "links": [
+            {
+                "url": null,
+                "label": "&laquo; Previous",
+                "active": false
+            },
+            {
+                "url": "http://127.0.0.1:8000/api/chapters?page=1",
+                "label": "1",
+                "active": true
+            },
+            {
+                "url": null,
+                "label": "Next &raquo;",
+                "active": false
+            }
+        ],
+        "next_page_url": null,
+        "path": "http://127.0.0.1:8000/api/chapters",
+        "per_page": 10,
+        "prev_page_url": null,
+        "to": 2,
+        "total": 2
+    }
+}
+```
+
+#### 3. Get Bab By Page
+
+> GET `http://127.0.0.1:8000/api/chapters?page=1`
+
+Example success Responds:
 
 ```JSON
 {
