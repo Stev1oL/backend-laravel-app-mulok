@@ -18,7 +18,7 @@ php artisan migrate
 ```
 
 ```bash
-php artisan server
+php artisan serve
 ```
 
 ## Server
