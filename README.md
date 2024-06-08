@@ -79,7 +79,7 @@ Example success Responds:
 
 ### Bab / Chapter
 
-#### 2. Create Bab
+#### 1. Create Bab
 
 > POST `http://localhost:8000/api/chapters`
 
@@ -155,7 +155,7 @@ Example suceess Responds:
 }
 ```
 
-#### 2. Get All Bab
+#### 3. Get All Bab
 
 > GET `http://localhost:8000/api/user/chapters`
 
