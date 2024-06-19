@@ -14,10 +14,10 @@ return new class extends Migration
         Schema::create('materials', function (Blueprint $table) {
             $table->id();
             $table->string('judul_materi');
-            $table->unsignedBigInteger('id_sub_bab');
+            $table->unsignedBigInteger('id_bab');
             $table->timestamps();
 
-            $table->foreign('id_sub_bab')->references('id')->on('sub_chapters')->onDelete('cascade');
+            $table->foreign('id_bab')->references('id')->on('chapters')->onDelete('cascade');
         });
     }
 

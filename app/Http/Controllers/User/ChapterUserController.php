@@ -14,12 +14,13 @@ class ChapterUserController extends Controller
         try {
             $chapter = Chapter::with([
                 'semester',
-                'subChapters'
+                'materials',
+                'dictionary',
             ])->findOrFail($id);
 
             return response()->json([
                 'status' => true,
-                'data' => $chapter
+                'bab' => $chapter
             ], 200);
         } catch (ModelNotFoundException $e) {
             return response()->json([
@@ -34,7 +35,8 @@ class ChapterUserController extends Controller
         $perPage = $request->input('page', 10);
         $chapters = Chapter::with([
             'semester',
-            'subChapters'
+            'materials',
+            'dictionary',
         ])->paginate($perPage);
 
         if ($chapters->isEmpty()) {
@@ -47,7 +49,7 @@ class ChapterUserController extends Controller
         return response()->json([
             'status' => true,
             'message' => 'All chapters',
-            'data' => $chapters
+            'bab' => $chapters
         ], 200);
     }
 }

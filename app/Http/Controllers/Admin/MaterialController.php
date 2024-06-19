@@ -13,7 +13,7 @@ class MaterialController extends Controller
     {
         $validatedData = Validator::make($request->all(), [
             'judul_materi' => 'required|string',
-            'id_sub_bab' => 'required|exists:sub_chapters,id',
+            'id_bab' => 'required|exists:chapters,id',
         ]);
 
         if ($validatedData->fails()) {
@@ -25,20 +25,20 @@ class MaterialController extends Controller
         } else {
             $material = Material::create([
                 'judul_materi' => $request->judul_materi,
-                'id_sub_bab' => $request->id_sub_bab,
+                'id_bab' => $request->id_bab,
             ]);
 
             return response()->json([
                 'success' => true,
                 'message' => 'Material created successfully',
-                'data' => $material
+                'materi' => $material
             ], 201);
         }
     }
 
     public function getMaterial($id)
     {
-        $material = Material::findOrFail($id);
+        $material = Material::with(['chapter'])->findOrFail($id);
 
         if (!$material) {
             return response()->json([
@@ -49,14 +49,14 @@ class MaterialController extends Controller
 
         return response()->json([
             'status' => true,
-            'data' => $material
+            'materi' => $material
         ], 200);
     }
 
     public function getAllMaterial(Request $request)
     {
         $perPage = $request->input('page', 10);
-        $material = Material::paginate($perPage);
+        $material = Material::with(['chapter'])->paginate($perPage);
 
         if (!$material) {
             return response()->json([
@@ -68,7 +68,7 @@ class MaterialController extends Controller
         return response()->json([
             'status' => true,
             'message' => 'All Materials',
-            'data' => $material
+            'materi' => $material
         ], 200);
     }
 
@@ -76,7 +76,7 @@ class MaterialController extends Controller
     {
         $validatedData = Validator::make($request->all(), [
             'judul_materi' => 'required|string',
-            'id_sub_bab' => 'required|exists:sub_chapters,id',
+            'id_bab' => 'required|exists:chapters,id',
         ]);
 
         if ($validatedData->fails()) {
@@ -95,14 +95,14 @@ class MaterialController extends Controller
             }
 
             $material->judul_materi = $request['judul_materi'];
-            $material->id_sub_bab = $request['id_sub_bab'];
+            $material->id_bab = $request['id_bab'];
 
             $material->save();
 
             return response()->json([
                 'success' => true,
                 'message' => 'Material updated successfully',
-                'data' => $material
+                'materi' => $material
             ], 200);
         }
     }

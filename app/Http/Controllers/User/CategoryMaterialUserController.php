@@ -11,6 +11,7 @@ class CategoryMaterialUserController extends Controller
     public function getCategory($id)
     {
         $category = CategoryMaterial::with([
+            'subMaterial',
             'imageMaterial',
             'textMaterial'
         ])->findOrFail($id);
@@ -23,13 +24,14 @@ class CategoryMaterialUserController extends Controller
 
         return response()->json([
             'status' => true,
-            'data' => $category
+            'kategori' => $category
         ], 200);
     }
 
     public function getAllCategory()
     {
         $category = CategoryMaterial::with([
+            'subMaterial',
             'imageMaterial',
             'textMaterial'
         ])->get();
@@ -43,7 +45,7 @@ class CategoryMaterialUserController extends Controller
         return response()->json([
             'status' => true,
             'message' => 'All Categories',
-            'data' => $category
+            'kategori' => $category
         ], 200);
     }
 }

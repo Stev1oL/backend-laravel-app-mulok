@@ -20,8 +20,13 @@ class Chapter extends Model
         return $this->belongsTo(Semester::class, 'id_semester');
     }
 
-    public function subChapters()
+    public function materials()
     {
-        return $this->hasMany(SubChapter::class, 'id');
+        return $this->hasMany(Material::class, 'id_bab');
+    }
+
+    public function dictionary()
+    {
+        return $this->hasMany(Dictionary::class, 'id_bab');
     }
 }

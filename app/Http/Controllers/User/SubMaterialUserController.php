@@ -12,6 +12,7 @@ class SubMaterialUserController extends Controller
     {
         $submaterial = SubMaterial::with([
             'material',
+            'category',
             'textMaterial',
             'groupTextMaterial',
             'imageMaterial'
@@ -26,7 +27,7 @@ class SubMaterialUserController extends Controller
 
         return response()->json([
             'status' => true,
-            'data' => $submaterial
+            'sub_materi' => $submaterial
         ], 200);
     }
 
@@ -35,6 +36,7 @@ class SubMaterialUserController extends Controller
         $perPage = $request->input('page', 10);
         $submaterial = SubMaterial::with([
             'material',
+            'category',
             'textMaterial',
             'groupTextMaterial',
             'imageMaterial'
@@ -50,7 +52,7 @@ class SubMaterialUserController extends Controller
         return response()->json([
             'status' => true,
             'message' => 'All SubMaterials',
-            'data' => $submaterial
+            'sub_materi' => $submaterial
         ], 200);
     }
 }

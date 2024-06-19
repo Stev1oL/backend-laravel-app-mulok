@@ -19,11 +19,11 @@ class TextMaterial extends Model
 
     public function subMaterial()
     {
-        return $this->belongsTo(SubMaterial::class);
+        return $this->belongsTo(SubMaterial::class, 'id_sub_materi');
     }
 
     public function category()
     {
-        return $this->belongsTo(CategoryMaterial::class);
+        return $this->belongsTo(CategoryMaterial::class, 'id_kategori');
     }
 }

@@ -33,14 +33,14 @@ class ImageMaterialController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => 'ImageMaterial created successfully',
-                'data' => $image
+                'gambar' => $image
             ], 201);
         }
     }
 
     public function getImageMaterial($id)
     {
-        $image = ImageMaterial::findOrFail($id);
+        $image = ImageMaterial::with(['category', 'subMaterial'])->findOrFail($id);
         if (!$image) {
             return response()->json([
                 'status' => false,
@@ -50,13 +50,13 @@ class ImageMaterialController extends Controller
 
         return response()->json([
             'status' => true,
-            'data' => $image
+            'gambar' => $image
         ], 200);
     }
 
     public function getAllImageMaterial()
     {
-        $image = ImageMaterial::all();
+        $image = ImageMaterial::with(['category', 'subMaterial'])->all();
         if (!$image) {
             return response()->json([
                 'status' => false,
@@ -67,7 +67,7 @@ class ImageMaterialController extends Controller
         return response()->json([
             'status' => true,
             'message' => 'All ImageMaterials',
-            'data' => $image
+            'gambar' => $image
         ], 200);
     }
 
@@ -103,7 +103,7 @@ class ImageMaterialController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => 'ImageMaterial updated successfully',
-                'data' => $image
+                'gambar' => $image
             ], 200);
         }
     }

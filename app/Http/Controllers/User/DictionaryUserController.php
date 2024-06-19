@@ -11,7 +11,7 @@ class DictionaryUserController extends Controller
     public function getDictionary($id)
     {
         $dictionary = Dictionary::with([
-            'subChapter'
+            'chapter'
         ])->findOrFail($id);
 
         if (!$dictionary) {
@@ -23,7 +23,7 @@ class DictionaryUserController extends Controller
 
         return response()->json([
             'status' => true,
-            'data' => $dictionary
+            'kamus' => $dictionary
         ], 200);
     }
 
@@ -31,7 +31,7 @@ class DictionaryUserController extends Controller
     {
         $perPage = $request->input('page', 25);
         $dictionary = Dictionary::with([
-            'subChapter'
+            'chapter'
         ])->paginate($perPage);
 
         if (!$dictionary) {
@@ -44,7 +44,7 @@ class DictionaryUserController extends Controller
         return response()->json([
             'status' => true,
             'message' => 'All Dictionaries',
-            'data' => $dictionary
+            'kamus' => $dictionary
         ], 200);
     }
 }

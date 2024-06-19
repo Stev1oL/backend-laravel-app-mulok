@@ -57,11 +57,11 @@ Route::post('/chapter/{id}', [ChapterController::class, 'editChapter']);
 Route::delete('/chapter/{id}', [ChapterController::class, 'deleteChapter']);
 
 // -- sub bab --
-Route::post('/subbab', [SubChapterController::class, 'createSubChapter']);
-Route::get('/subbab', [SubChapterController::class, 'getAllSubChapter']);
-Route::get('/subbab/{id}', [SubChapterController::class, 'getSubChapter']);
-Route::post('/subbab/{id}', [SubChapterController::class, 'editSubChapter']);
-Route::delete('/subbab/{id}', [SubChapterController::class, 'deleteSubChapter']);
+// Route::post('/subbab', [SubChapterController::class, 'createSubChapter']);
+// Route::get('/subbab', [SubChapterController::class, 'getAllSubChapter']);
+// Route::get('/subbab/{id}', [SubChapterController::class, 'getSubChapter']);
+// Route::post('/subbab/{id}', [SubChapterController::class, 'editSubChapter']);
+// Route::delete('/subbab/{id}', [SubChapterController::class, 'deleteSubChapter']);
 
 // -- materi --
 Route::post('/materials', [MaterialController::class, 'createMaterial']);
@@ -131,8 +131,8 @@ Route::get('/user/categories', [CategoryMaterialUserController::class, 'getAllCa
 Route::get('/user/category/{id}', [CategoryMaterialUserController::class, 'getCategory']);
 
 // -- sub bab --
-Route::get('/user/subbab', [SubChapterUserController::class, 'getAllSubChapter']);
-Route::get('/user/subbab/{id}', [SubChapterUserController::class, 'getSubChapter']);
+// Route::get('/user/subbab', [SubChapterUserController::class, 'getAllSubChapter']);
+// Route::get('/user/subbab/{id}', [SubChapterUserController::class, 'getSubChapter']);
 
 // -- materi --
 Route::get('/user/materials', [MaterialUserController::class, 'getAllMaterial']);

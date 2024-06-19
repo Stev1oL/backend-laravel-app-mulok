@@ -29,7 +29,7 @@ class SemesterController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => 'Semester created successfully',
-                'data' => $semester
+                'semester' => $semester
             ], 201);
         }
     }
@@ -46,7 +46,7 @@ class SemesterController extends Controller
 
         return response()->json([
             'status' => true,
-            'data' => $semester
+            'semester' => $semester
         ], 200);
     }
 
@@ -63,7 +63,7 @@ class SemesterController extends Controller
         return response()->json([
             'status' => true,
             'message' => 'All semesters',
-            'data' => $semester
+            'semester' => $semester
         ], 200);
     }
 
@@ -95,7 +95,7 @@ class SemesterController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => 'Semester updated successfully',
-                'data' => $semester
+                'semester' => $semester
             ], 200);
         }
     }

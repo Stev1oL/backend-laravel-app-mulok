@@ -30,7 +30,8 @@ class LoginMobileController extends Controller
             }
 
             $user = Student::where('username', $request->username)->first();
-            if (!$user || !Hash::check($request->password, $user->password)) {
+            $pass = Student::where('password', $request->password);
+            if (!$user || !$pass) {
                 return response()->json([
                     'success' => false,
                     'message' => 'Username & Password do not match with our records.',

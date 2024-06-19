@@ -15,6 +15,6 @@ class Semester extends Model
 
     public function students()
     {
-        return $this->hasMany(Student::class, 'id');
+        return $this->hasMany(Student::class, 'id_semester');
     }
 }

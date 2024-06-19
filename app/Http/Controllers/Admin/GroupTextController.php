@@ -52,7 +52,7 @@ class GroupTextController extends Controller
 
     public function getGroupText($id)
     {
-        $grouptext = GroupTextMaterial::findOrFail($id);
+        $grouptext = GroupTextMaterial::with(['subMaterial'])->findOrFail($id);
 
         if (!$grouptext) {
             return response()->json([
@@ -63,14 +63,14 @@ class GroupTextController extends Controller
 
         return response()->json([
             'status' => true,
-            'data' => $grouptext
+            'bab' => $grouptext
         ], 200);
     }
 
     public function getAllGroupText(Request $request)
     {
         $perPage = $request->input('page', 10);
-        $grouptext = GroupTextMaterial::paginate($perPage);
+        $grouptext = GroupTextMaterial::with(['subMaterial'])->paginate($perPage);
 
         if (!$grouptext) {
             return response()->json([
@@ -82,7 +82,7 @@ class GroupTextController extends Controller
         return response()->json([
             'status' => true,
             'message' => 'All Group Text',
-            'data' => $grouptext
+            'bab' => $grouptext
         ], 200);
     }
 
@@ -123,7 +123,7 @@ class GroupTextController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => 'Group Text updated successfully',
-                'data' => $grouptext
+                'bab' => $grouptext
             ], 200);
         }
     }

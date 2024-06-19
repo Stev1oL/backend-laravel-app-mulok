@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->text('materi');
             $table->text('terjemahan');
-            $table->string('audio');
+            $table->string('audio')->nullable();
             $table->unsignedBigInteger('id_sub_materi');
             $table->unsignedBigInteger('id_kategori');
             $table->timestamps();

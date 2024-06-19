@@ -13,13 +13,18 @@ class CategoryMaterial extends Model
         'nama_kategori',
     ];
 
+    public function subMaterial()
+    {
+        return $this->hasMany(SubMaterial::class, 'id_kategori');
+    }
+
     public function imageMaterial()
     {
-        return $this->hasMany(ImageMaterial::class, 'id');
+        return $this->hasMany(ImageMaterial::class, 'id_kategori');
     }
 
     public function textMaterial()
     {
-        return $this->hasMany(TextMaterial::class, 'id');
+        return $this->hasMany(TextMaterial::class, 'id_kategori');
     }
 }

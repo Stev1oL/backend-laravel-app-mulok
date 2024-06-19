@@ -11,16 +11,17 @@ class Material extends Model
 
     protected $fillable = [
         'judul_materi',
-        'id_sub_bab',
+        'kategori_materi',
+        'id_bab',
     ];
 
-    public function subChapter()
+    public function chapter()
     {
-        return $this->belongsTo(SubChapter::class, 'id_sub_bab');
+        return $this->belongsTo(Chapter::class, 'id_bab');
     }
 
     public function subMaterial()
     {
-        return $this->hasMany(SubMaterial::class, 'id');
+        return $this->hasMany(SubMaterial::class, 'id_materi');
     }
 }

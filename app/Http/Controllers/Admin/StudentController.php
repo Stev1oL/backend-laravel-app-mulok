@@ -31,7 +31,7 @@ class StudentController extends Controller
                 'nama' => $request->nama,
                 'nisn' => $request->nisn,
                 'username' => $request->username,
-                'password' => Hash::make($request->password),
+                'password' => $request->password,
                 'id_semester' => $request->id_semester,
             ]);
             $student->makeHidden('password');
@@ -46,7 +46,7 @@ class StudentController extends Controller
 
     public function getStudent($id)
     {
-        $student = Student::findOrFail($id);
+        $student = Student::with(['semester'])->findOrFail($id);
         if (!$student) {
             return response()->json([
                 'status' => false,
@@ -63,7 +63,7 @@ class StudentController extends Controller
 
     public function getAllStudent()
     {
-        $student = Student::all();
+        $student = Student::with(['semester'])->all();
         if (!$student) {
             return response()->json([
                 'status' => false,

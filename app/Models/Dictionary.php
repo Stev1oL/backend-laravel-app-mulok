@@ -13,11 +13,11 @@ class Dictionary extends Model
         'bahasa_dayak',
         'terjemahan',
         'audio',
-        'id_sub_bab',
+        'id_bab',
     ];
 
-    public function subChapter()
+    public function chapter()
     {
-        return $this->belongsTo(SubChapter::class, 'id_sub_bab');
+        return $this->belongsTo(Chapter::class, 'id_bab');
     }
 }

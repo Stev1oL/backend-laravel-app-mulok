@@ -16,7 +16,7 @@ class DictionaryController extends Controller
             'bahasa_dayak' => 'required|string',
             'terjemahan' => 'required|string',
             'audio' => 'file|mimes:mp3,wav,ogg,aac,flac',
-            'id_sub_bab' => 'required|exists:sub_chapters,id'
+            'id_bab' => 'required|exists:chapters,id'
         ]);
 
         if ($validatedData->fails()) {
@@ -33,7 +33,7 @@ class DictionaryController extends Controller
                     'bahasa_dayak' => $request->bahasa_dayak,
                     'terjemahan' => $request->terjemahan,
                     'audio' => $uploadedFileUrl,
-                    'id_sub_bab' => $request->id_sub_bab
+                    'id_bab' => $request->id_bab
                 ]);
 
                 return response()->json([
@@ -52,7 +52,7 @@ class DictionaryController extends Controller
 
     public function getDictionary($id)
     {
-        $dictionary = Dictionary::findOrFail($id);
+        $dictionary = Dictionary::with(['chapter'])->findOrFail($id);
 
         if (!$dictionary) {
             return response()->json([
@@ -63,14 +63,14 @@ class DictionaryController extends Controller
 
         return response()->json([
             'status' => true,
-            'data' => $dictionary
+            'kamus' => $dictionary
         ], 200);
     }
 
     public function getAllDictionary(Request $request)
     {
         $perPage = $request->input('page', 25);
-        $dictionary = Dictionary::paginate($perPage);
+        $dictionary = Dictionary::with(['chapter'])->paginate($perPage);
 
         if (!$dictionary) {
             return response()->json([
@@ -82,7 +82,7 @@ class DictionaryController extends Controller
         return response()->json([
             'status' => true,
             'message' => 'All Dictionaries',
-            'data' => $dictionary
+            'kamus' => $dictionary
         ], 200);
     }
 
@@ -92,7 +92,7 @@ class DictionaryController extends Controller
             'bahasa_dayak' => 'string',
             'terjemahan' => 'string',
             'audio' => 'file|mimes:mp3,wav,ogg,aac,flac',
-            'id_sub_bab' => 'exists:sub_chapters,id'
+            'id_bab' => 'exists:chapters,id'
         ]);
 
         if ($validatedData->fails()) {
@@ -112,7 +112,7 @@ class DictionaryController extends Controller
 
             $dictionary->bahasa_dayak = $request['bahasa_dayak'];
             $dictionary->terjemahan = $request['terjemahan'];
-            $dictionary->id_sub_bab = $request['id_sub_bab'];
+            $dictionary->id_bab = $request['id_bab'];
             if ($request->hasFile('audio')) {
                 $uploadedFileUrl = cloudinary()->uploadFile($request->file('audio')->getRealPath())->getSecurePath();
                 $dictionary->audio = $uploadedFileUrl;
@@ -123,7 +123,7 @@ class DictionaryController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => 'Dictionary updated successfully',
-                'data' => $dictionary
+                'kamus' => $dictionary
             ], 200);
         }
     }

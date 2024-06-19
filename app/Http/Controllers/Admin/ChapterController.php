@@ -33,14 +33,14 @@ class ChapterController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => 'Chapter created successfully',
-                'data' => $chapter
+                'bab' => $chapter
             ], 201);
         }
     }
 
     public function getChapter($id)
     {
-        $chapter = Chapter::findOrFail($id);
+        $chapter = Chapter::with(['semester'])->findOrFail($id);
 
         if (!$chapter) {
             return response()->json([
@@ -51,14 +51,14 @@ class ChapterController extends Controller
 
         return response()->json([
             'status' => true,
-            'data' => $chapter
+            'bab' => $chapter
         ], 200);
     }
 
     public function getAllChapter(Request $request)
     {
         $perPage = $request->input('page', 10);
-        $chapter = Chapter::paginate($perPage);
+        $chapter = Chapter::with(['semester'])->paginate($perPage);
 
         if (!$chapter) {
             return response()->json([
@@ -70,7 +70,7 @@ class ChapterController extends Controller
         return response()->json([
             'status' => true,
             'message' => 'All chapters',
-            'data' => $chapter
+            'bab' => $chapter
         ], 200);
     }
 
@@ -106,7 +106,7 @@ class ChapterController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => 'Chapter updated successfully',
-                'data' => $chapter
+                'bab' => $chapter
             ], 200);
         }
     }

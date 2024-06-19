@@ -15,11 +15,11 @@ return new class extends Migration
             $table->id();
             $table->string('bahasa_dayak');
             $table->string('terjemahan');
-            $table->string('audio');
-            $table->unsignedBigInteger('id_sub_bab');
+            $table->string('audio')->nullable();
+            $table->unsignedBigInteger('id_bab');
             $table->timestamps();
 
-            $table->foreign('id_sub_bab')->references('id')->on('sub_chapters')->onDelete('cascade');
+            $table->foreign('id_bab')->references('id')->on('chapters')->onDelete('cascade');
         });
     }
 

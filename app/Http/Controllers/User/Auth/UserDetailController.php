@@ -48,7 +48,7 @@ class UserDetailController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => 'User updated successfully',
-                'data' => $user
+                'student' => $user
             ], 200);
         }
     }
@@ -66,21 +66,21 @@ class UserDetailController extends Controller
                 'message' => $validatedData->errors(),
             ], 500);
         } else {
-            $user = Student::findOrFail(Auth::user()->id);
-            if (!$user) {
+            $student = Student::findOrFail(Auth::user()->id);
+            if (!$student) {
                 return response()->json([
                     'success' => false,
                     'message' => 'User not found',
                 ], 404);
             }
 
-            $user->password = Hash::make($request->password);
-            $user->save();
+            $student->password = $request->password;
+            $student->save();
 
             return response()->json([
                 'success' => true,
                 'message' => 'Change password successfully',
-                'data' => $user
+                'student' => $student
             ], 200);
         }
     }

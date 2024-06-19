@@ -18,6 +18,6 @@ class GroupTextMaterial extends Model
 
     public function subMaterial()
     {
-        return $this->belongsTo(SubMaterial::class);
+        return $this->belongsTo(SubMaterial::class, 'id_sub_materi');
     }
 }

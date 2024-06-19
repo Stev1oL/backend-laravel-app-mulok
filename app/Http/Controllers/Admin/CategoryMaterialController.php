@@ -29,7 +29,7 @@ class CategoryMaterialController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => 'Category created successfully',
-                'data' => $category
+                'kategori' => $category
             ], 201);
         }
     }
@@ -46,7 +46,7 @@ class CategoryMaterialController extends Controller
 
         return response()->json([
             'status' => true,
-            'data' => $category
+            'kategori' => $category
         ], 200);
     }
 
@@ -63,7 +63,7 @@ class CategoryMaterialController extends Controller
         return response()->json([
             'status' => true,
             'message' => 'All Categories',
-            'data' => $category
+            'kategori' => $category
         ], 200);
     }
 
@@ -95,7 +95,7 @@ class CategoryMaterialController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => 'Category updated successfully',
-                'data' => $category
+                'kategori' => $category
             ], 200);
         }
     }

@@ -65,7 +65,7 @@ class AdminDetailController extends Controller
         } else {
             $user = User::findOrFail(Auth::user()->id);
 
-            $user->password  = Hash::make($request->password);
+            $user->password = Hash::make($request->password);
 
             $user->save();
 

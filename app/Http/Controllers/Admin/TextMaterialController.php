@@ -41,7 +41,7 @@ class TextMaterialController extends Controller
                 return response()->json([
                     'success' => true,
                     'message' => 'Text Material created successfully',
-                    'data' => $text
+                    'teks_materi' => $text
                 ], 201);
             } catch (QueryException $e) {
                 return response()->json([
@@ -54,7 +54,7 @@ class TextMaterialController extends Controller
 
     public function getTextMaterial($id)
     {
-        $text = TextMaterial::findOrFail($id);
+        $text = TextMaterial::with(['category', 'subMaterial'])->findOrFail($id);
 
         if (!$text) {
             return response()->json([
@@ -65,14 +65,14 @@ class TextMaterialController extends Controller
 
         return response()->json([
             'status' => true,
-            'data' => $text
+            'teks_materi' => $text
         ], 200);
     }
 
     public function getAllTextMaterial(Request $request)
     {
         $perPage = $request->input('page', 10);
-        $text = TextMaterial::paginate($perPage);
+        $text = TextMaterial::with(['category', 'subMaterial'])->paginate($perPage);
 
         if (!$text) {
             return response()->json([
@@ -84,7 +84,7 @@ class TextMaterialController extends Controller
         return response()->json([
             'status' => true,
             'message' => 'All Text Materials',
-            'data' => $text
+            'teks_materi' => $text
         ], 200);
     }
 
@@ -127,7 +127,7 @@ class TextMaterialController extends Controller
             return response()->json([
                 'success' => true,
                 'message' => 'Text Material updated successfully',
-                'data' => $text
+                'teks_materi' => $text
             ], 200);
         }
     }

@@ -15,6 +15,7 @@ class SubMaterialController extends Controller
             'nomor_sub_materi' => 'required',
             'judul_sub_materi' => 'required|string',
             'id_materi' => 'required|exists:materials,id',
+            'id_kategori' => 'required|exists:category_materials,id',
         ]);
 
         if ($validatedData->fails()) {
@@ -28,19 +29,23 @@ class SubMaterialController extends Controller
                 'nomor_sub_materi' => $request->nomor_sub_materi,
                 'judul_sub_materi' => $request->judul_sub_materi,
                 'id_materi' => $request->id_materi,
+                'id_kategori' => $request->id_kategori,
             ]);
 
             return response()->json([
                 'success' => true,
                 'message' => 'SubMaterial created successfully',
-                'data' => $submaterial
+                'sub_materi' => $submaterial
             ], 201);
         }
     }
 
     public function getSubMaterial($id)
     {
-        $submaterial = SubMaterial::findOrFail($id);
+        $submaterial = SubMaterial::with([
+            'material',
+            'category'
+        ])->findOrFail($id);
 
         if (!$submaterial) {
             return response()->json([
@@ -51,14 +56,17 @@ class SubMaterialController extends Controller
 
         return response()->json([
             'status' => true,
-            'data' => $submaterial
+            'sub_materi' => $submaterial
         ], 200);
     }
 
     public function getAllSubMaterial(Request $request)
     {
         $perPage = $request->input('page', 10);
-        $submaterial = SubMaterial::paginate($perPage);
+        $submaterial = SubMaterial::with([
+            'material',
+            'category'
+        ])->paginate($perPage);
 
         if (!$submaterial) {
             return response()->json([
@@ -70,7 +78,7 @@ class SubMaterialController extends Controller
         return response()->json([
             'status' => true,
             'message' => 'All SubMaterials',
-            'data' => $submaterial
+            'sub_materi' => $submaterial
         ], 200);
     }
 
@@ -80,6 +88,7 @@ class SubMaterialController extends Controller
             'nomor_sub_materi' => 'required',
             'judul_sub_materi' => 'required|string',
             'id_materi' => 'required|exists:materials,id',
+            'id_kategori' => 'required|exists:category_materials,id',
         ]);
 
         if ($validatedData->fails()) {
@@ -100,13 +109,14 @@ class SubMaterialController extends Controller
             $submaterial->nomor_sub_materi = $request['nomor_sub_materi'];
             $submaterial->judul_sub_materi = $request['judul_sub_materi'];
             $submaterial->id_materi = $request['id_materi'];
+            $submaterial->id_kategori = $request['id_kategori'];
 
             $submaterial->save();
 
             return response()->json([
                 'success' => true,
                 'message' => 'SubMaterial updated successfully',
-                'data' => $submaterial
+                'sub_materi' => $submaterial
             ], 200);
         }
     }
