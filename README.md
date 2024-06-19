@@ -253,30 +253,39 @@ Example success Responds:
 
 ```JSON
 {
-    "response": 200,
     "status": true,
-    "data": {
-        "id": 1,
+    "bab": {
+        "id": 2,
         "nomor_bab": "1",
-        "judul_bab": "1",
+        "judul_bab": "bab 1",
         "id_semester": 1,
-        "created_at": "2024-06-08T05:05:04.000000Z",
-        "updated_at": "2024-06-08T05:05:04.000000Z",
+        "created_at": "2024-06-19T03:10:38.000000Z",
+        "updated_at": "2024-06-19T03:10:38.000000Z",
         "semester": {
             "id": 1,
             "semester": "1",
-            "created_at": "2024-06-08T05:03:58.000000Z",
-            "updated_at": "2024-06-08T05:03:58.000000Z"
+            "created_at": "2024-06-19T01:25:40.000000Z",
+            "updated_at": "2024-06-19T01:25:40.000000Z"
         },
-        "sub_chapters": [
+        "materials": [
             {
-                "id": 1,
-                "nomor_sub_bab": "1",
-                "judul_sub_bab": "1",
-                "gambar": "https://res.cloudinary.com/dtjkuzlr2/image/upload/v1717823124/oojmkllmqpchfkmrtxoe.png",
-                "id_bab": 1,
-                "created_at": "2024-06-08T05:05:23.000000Z",
-                "updated_at": "2024-06-08T05:05:23.000000Z"
+                "id": 2,
+                "judul_materi": "judul 1",
+                "kategori_materi": "kategori 1",
+                "id_bab": 2,
+                "created_at": "2024-06-19T03:11:12.000000Z",
+                "updated_at": "2024-06-19T03:11:12.000000Z"
+            }
+        ],
+        "dictionary": [
+            {
+                "id": 2,
+                "bahasa_dayak": "ikau",
+                "terjemahan": "kamu",
+                "audio": "https://res.cloudinary.com/dtjkuzlr2/video/upload/v1718767348/lfc5cczvdenbc3upmram.mp3",
+                "id_bab": 2,
+                "created_at": "2024-06-19T03:22:28.000000Z",
+                "updated_at": "2024-06-19T03:22:28.000000Z"
             }
         ]
     }
@@ -291,51 +300,45 @@ Example success Responds:
 
 ```JSON
 {
-    "response": 200,
     "status": true,
     "message": "All chapters",
-    "data": {
+    "bab": {
         "current_page": 1,
         "data": [
             {
-                "id": 1,
+                "id": 2,
                 "nomor_bab": "1",
-                "judul_bab": "1",
+                "judul_bab": "bab 1",
                 "id_semester": 1,
-                "created_at": "2024-06-08T05:05:04.000000Z",
-                "updated_at": "2024-06-08T05:05:04.000000Z",
+                "created_at": "2024-06-19T03:10:38.000000Z",
+                "updated_at": "2024-06-19T03:10:38.000000Z",
                 "semester": {
                     "id": 1,
                     "semester": "1",
-                    "created_at": "2024-06-08T05:03:58.000000Z",
-                    "updated_at": "2024-06-08T05:03:58.000000Z"
+                    "created_at": "2024-06-19T01:25:40.000000Z",
+                    "updated_at": "2024-06-19T01:25:40.000000Z"
                 },
-                "sub_chapters": [
+                "materials": [
                     {
-                        "id": 1,
-                        "nomor_sub_bab": "1",
-                        "judul_sub_bab": "1",
-                        "gambar": "https://res.cloudinary.com/dtjkuzlr2/image/upload/v1717823124/oojmkllmqpchfkmrtxoe.png",
-                        "id_bab": 1,
-                        "created_at": "2024-06-08T05:05:23.000000Z",
-                        "updated_at": "2024-06-08T05:05:23.000000Z"
+                        "id": 2,
+                        "judul_materi": "judul 1",
+                        "kategori_materi": "kategori 1",
+                        "id_bab": 2,
+                        "created_at": "2024-06-19T03:11:12.000000Z",
+                        "updated_at": "2024-06-19T03:11:12.000000Z"
+                    }
+                ],
+                "dictionary": [
+                    {
+                        "id": 2,
+                        "bahasa_dayak": "ikau",
+                        "terjemahan": "kamu",
+                        "audio": "https://res.cloudinary.com/dtjkuzlr2/video/upload/v1718767348/lfc5cczvdenbc3upmram.mp3",
+                        "id_bab": 2,
+                        "created_at": "2024-06-19T03:22:28.000000Z",
+                        "updated_at": "2024-06-19T03:22:28.000000Z"
                     }
                 ]
-            },
-            {
-                "id": 2,
-                "nomor_bab": "2",
-                "judul_bab": "2",
-                "id_semester": 1,
-                "created_at": "2024-06-08T05:05:09.000000Z",
-                "updated_at": "2024-06-08T05:05:09.000000Z",
-                "semester": {
-                    "id": 1,
-                    "semester": "1",
-                    "created_at": "2024-06-08T05:03:58.000000Z",
-                    "updated_at": "2024-06-08T05:03:58.000000Z"
-                },
-                "sub_chapters": []
             }
         ],
         "first_page_url": "http://127.0.0.1:8000/api/user/chapters?page=1",
@@ -363,8 +366,8 @@ Example success Responds:
         "path": "http://127.0.0.1:8000/api/user/chapters",
         "per_page": 10,
         "prev_page_url": null,
-        "to": 2,
-        "total": 2
+        "to": 1,
+        "total": 1
     }
 }
 ```
@@ -377,42 +380,51 @@ Example success Responds:
 
 ```JSON
 {
-    "response": 200,
     "status": true,
     "message": "All chapters",
-    "data": {
+    "bab": {
         "current_page": 1,
         "data": [
             {
-                "id": 1,
+                "id": 2,
                 "nomor_bab": "1",
-                "judul_bab": "1",
+                "judul_bab": "bab 1",
                 "id_semester": 1,
-                "created_at": "2024-06-08T05:05:04.000000Z",
-                "updated_at": "2024-06-08T05:05:04.000000Z",
+                "created_at": "2024-06-19T03:10:38.000000Z",
+                "updated_at": "2024-06-19T03:10:38.000000Z",
                 "semester": {
                     "id": 1,
                     "semester": "1",
-                    "created_at": "2024-06-08T05:03:58.000000Z",
-                    "updated_at": "2024-06-08T05:03:58.000000Z"
+                    "created_at": "2024-06-19T01:25:40.000000Z",
+                    "updated_at": "2024-06-19T01:25:40.000000Z"
                 },
-                "sub_chapters": [
+                "materials": [
                     {
-                        "id": 1,
-                        "nomor_sub_bab": "1",
-                        "judul_sub_bab": "1",
-                        "gambar": "https://res.cloudinary.com/dtjkuzlr2/image/upload/v1717823124/oojmkllmqpchfkmrtxoe.png",
-                        "id_bab": 1,
-                        "created_at": "2024-06-08T05:05:23.000000Z",
-                        "updated_at": "2024-06-08T05:05:23.000000Z"
+                        "id": 2,
+                        "judul_materi": "judul 1",
+                        "kategori_materi": "kategori 1",
+                        "id_bab": 2,
+                        "created_at": "2024-06-19T03:11:12.000000Z",
+                        "updated_at": "2024-06-19T03:11:12.000000Z"
+                    }
+                ],
+                "dictionary": [
+                    {
+                        "id": 2,
+                        "bahasa_dayak": "ikau",
+                        "terjemahan": "kamu",
+                        "audio": "https://res.cloudinary.com/dtjkuzlr2/video/upload/v1718767348/lfc5cczvdenbc3upmram.mp3",
+                        "id_bab": 2,
+                        "created_at": "2024-06-19T03:22:28.000000Z",
+                        "updated_at": "2024-06-19T03:22:28.000000Z"
                     }
                 ]
             }
         ],
         "first_page_url": "http://127.0.0.1:8000/api/user/chapters?page=1",
         "from": 1,
-        "last_page": 2,
-        "last_page_url": "http://127.0.0.1:8000/api/user/chapters?page=2",
+        "last_page": 1,
+        "last_page_url": "http://127.0.0.1:8000/api/user/chapters?page=1",
         "links": [
             {
                 "url": null,
@@ -425,134 +437,121 @@ Example success Responds:
                 "active": true
             },
             {
-                "url": "http://127.0.0.1:8000/api/user/chapters?page=2",
-                "label": "2",
-                "active": false
-            },
-            {
-                "url": "http://127.0.0.1:8000/api/user/chapters?page=2",
+                "url": null,
                 "label": "Next &raquo;",
                 "active": false
             }
         ],
-        "next_page_url": "http://127.0.0.1:8000/api/user/chapters?page=2",
+        "next_page_url": null,
         "path": "http://127.0.0.1:8000/api/user/chapters",
         "per_page": 1,
         "prev_page_url": null,
         "to": 1,
-        "total": 2
+        "total": 1
     }
 }
 ```
 
-### Sub Bab / SubChapter
+### Materi
 
-#### 1. Get Sub Bab By ID
+#### 1. Get Materi By ID
 
-> GET `http://127.0.0.1:8000/api/user/subbab/{id}`
+> GET `http://127.0.0.1:8000/api/user/material/{id}`
 
 Example success Responds:
 
 ```JSON
 {
-    "response": 200,
     "status": true,
-    "data": {
-        "id": 1,
-        "nomor_sub_bab": "1",
-        "judul_sub_bab": "1",
-        "gambar": "https://res.cloudinary.com/dtjkuzlr2/image/upload/v1717823124/oojmkllmqpchfkmrtxoe.png",
-        "id_bab": 1,
-        "created_at": "2024-06-08T05:05:23.000000Z",
-        "updated_at": "2024-06-08T05:05:23.000000Z",
+    "materi": {
+        "id": 2,
+        "judul_materi": "judul 1",
+        "kategori_materi": "kategori 1",
+        "id_bab": 2,
+        "created_at": "2024-06-19T03:11:12.000000Z",
+        "updated_at": "2024-06-19T03:11:12.000000Z",
         "chapter": {
-            "id": 1,
+            "id": 2,
             "nomor_bab": "1",
-            "judul_bab": "1",
+            "judul_bab": "bab 1",
             "id_semester": 1,
-            "created_at": "2024-06-08T05:05:04.000000Z",
-            "updated_at": "2024-06-08T05:05:04.000000Z"
+            "created_at": "2024-06-19T03:10:38.000000Z",
+            "updated_at": "2024-06-19T03:10:38.000000Z"
         },
-        "materials": [
+        "sub_material": [
             {
                 "id": 1,
-                "judul_materi": "judul1",
-                "id_sub_bab": 1,
-                "created_at": "2024-06-08T05:06:22.000000Z",
-                "updated_at": "2024-06-08T05:06:22.000000Z"
-            }
-        ],
-        "dictionary": [
+                "nomor_sub_materi": "1",
+                "judul_sub_materi": "judul 1",
+                "id_materi": 2,
+                "created_at": "2024-06-19T03:11:33.000000Z",
+                "updated_at": "2024-06-19T03:11:33.000000Z"
+            },
             {
-                "id": 1,
-                "bahasa_dayak": "ikau",
-                "terjemahan": "kamu",
-                "audio": "https://res.cloudinary.com/dtjkuzlr2/video/upload/v1717823349/mjsgm6syvwjcokkdtjif.mp3",
-                "id_sub_bab": 1,
-                "created_at": "2024-06-08T05:09:07.000000Z",
-                "updated_at": "2024-06-08T05:09:07.000000Z"
+                "id": 2,
+                "nomor_sub_materi": "1",
+                "judul_sub_materi": "judul 1",
+                "id_materi": 2,
+                "created_at": "2024-06-19T03:26:27.000000Z",
+                "updated_at": "2024-06-19T03:26:27.000000Z"
             }
         ]
     }
 }
 ```
 
-#### 2. Get All Sub Bab
+#### 2. Get All Materi
 
-> GET `http://127.0.0.1:8000/api/user/subbab`
+> GET `http://127.0.0.1:8000/api/user/materials`
 
 Example success Responds:
 
 ```JSON
 {
-    "response": 200,
     "status": true,
-    "message": "All SubBab",
-    "data": {
+    "message": "All Materials",
+    "materi": {
         "current_page": 1,
         "data": [
             {
-                "id": 1,
-                "nomor_sub_bab": "1",
-                "judul_sub_bab": "1",
-                "gambar": "https://res.cloudinary.com/dtjkuzlr2/image/upload/v1717823124/oojmkllmqpchfkmrtxoe.png",
-                "id_bab": 1,
-                "created_at": "2024-06-08T05:05:23.000000Z",
-                "updated_at": "2024-06-08T05:05:23.000000Z",
+                "id": 2,
+                "judul_materi": "judul 1",
+                "kategori_materi": "kategori 1",
+                "id_bab": 2,
+                "created_at": "2024-06-19T03:11:12.000000Z",
+                "updated_at": "2024-06-19T03:11:12.000000Z",
                 "chapter": {
-                    "id": 1,
+                    "id": 2,
                     "nomor_bab": "1",
-                    "judul_bab": "1",
+                    "judul_bab": "bab 1",
                     "id_semester": 1,
-                    "created_at": "2024-06-08T05:05:04.000000Z",
-                    "updated_at": "2024-06-08T05:05:04.000000Z"
+                    "created_at": "2024-06-19T03:10:38.000000Z",
+                    "updated_at": "2024-06-19T03:10:38.000000Z"
                 },
-                "materials": [
+                "sub_material": [
                     {
                         "id": 1,
-                        "judul_materi": "judul1",
-                        "id_sub_bab": 1,
-                        "created_at": "2024-06-08T05:06:22.000000Z",
-                        "updated_at": "2024-06-08T05:06:22.000000Z"
-                    }
-                ],
-                "dictionary": [
+                        "nomor_sub_materi": "1",
+                        "judul_sub_materi": "judul 1",
+                        "id_materi": 2,
+                        "created_at": "2024-06-19T03:11:33.000000Z",
+                        "updated_at": "2024-06-19T03:11:33.000000Z"
+                    },
                     {
-                        "id": 1,
-                        "bahasa_dayak": "ikau",
-                        "terjemahan": "kamu",
-                        "audio": "https://res.cloudinary.com/dtjkuzlr2/video/upload/v1717823349/mjsgm6syvwjcokkdtjif.mp3",
-                        "id_sub_bab": 1,
-                        "created_at": "2024-06-08T05:09:07.000000Z",
-                        "updated_at": "2024-06-08T05:09:07.000000Z"
+                        "id": 2,
+                        "nomor_sub_materi": "1",
+                        "judul_sub_materi": "judul 1",
+                        "id_materi": 2,
+                        "created_at": "2024-06-19T03:26:27.000000Z",
+                        "updated_at": "2024-06-19T03:26:27.000000Z"
                     }
                 ]
             }
         ],
-        "first_page_url": "http://127.0.0.1:8000/api/user/subbab?page=1",
+        "first_page_url": "http://127.0.0.1:8000/api/user/materials?page=1",
         "from": 1,
         "last_page": 1,
-        "last_page_url": "http://127.0.0.1:8000/api/user/subbab?page=1",
+        "last_page_url": "http://127.0.0.1:8000/api/user/materials?page=1",
         "links": [
             {
                 "url": null,
@@ -560,7 +559,7 @@ Example success Responds:
                 "active": false
             },
             {
-                "url": "http://127.0.0.1:8000/api/user/subbab?page=1",
+                "url": "http://127.0.0.1:8000/api/user/materials?page=1",
                 "label": "1",
                 "active": true
             },
@@ -571,11 +570,187 @@ Example success Responds:
             }
         ],
         "next_page_url": null,
-        "path": "http://127.0.0.1:8000/api/user/subbab",
+        "path": "http://127.0.0.1:8000/api/user/materials",
         "per_page": 10,
         "prev_page_url": null,
         "to": 1,
         "total": 1
+    }
+}
+```
+
+### Materi
+
+#### 1. Get Sub Materi By ID
+
+> GET `http://127.0.0.1:8000/api/user/submateri/{id}`
+
+Example success Responds:
+
+```JSON
+{
+    "status": true,
+    "sub_materi": {
+        "id": 1,
+        "nomor_sub_materi": "1",
+        "judul_sub_materi": "judul 1",
+        "id_materi": 2,
+        "created_at": "2024-06-19T03:11:33.000000Z",
+        "updated_at": "2024-06-19T03:11:33.000000Z",
+        "material": {
+            "id": 2,
+            "judul_materi": "judul 1",
+            "kategori_materi": "kategori 1",
+            "id_bab": 2,
+            "created_at": "2024-06-19T03:11:12.000000Z",
+            "updated_at": "2024-06-19T03:11:12.000000Z"
+        },
+        "text_material": [
+            {
+                "id": 1,
+                "materi": "materi1",
+                "terjemahan": "terjemahan1",
+                "audio": "https://res.cloudinary.com/dtjkuzlr2/video/upload/v1718766740/xzh2izfalfvflxtuje0m.mp3",
+                "id_sub_materi": 1,
+                "id_kategori": 1,
+                "created_at": "2024-06-19T03:12:20.000000Z",
+                "updated_at": "2024-06-19T03:12:20.000000Z"
+            }
+        ],
+        "group_text_material": [
+            {
+                "id": 1,
+                "nomor_sub_bab": "1",
+                "judul_sub_bab": "judul1",
+                "gambar": "https://res.cloudinary.com/dtjkuzlr2/image/upload/v1718766756/rxdyuawzxce1vmwmeegx.png",
+                "id_sub_materi": 1,
+                "created_at": "2024-06-19T03:12:36.000000Z",
+                "updated_at": "2024-06-19T03:12:36.000000Z"
+            }
+        ],
+        "image_material": [
+            {
+                "id": 1,
+                "materi": "materi 1",
+                "id_sub_materi": 1,
+                "id_kategori": 1,
+                "created_at": "2024-06-19T03:12:05.000000Z",
+                "updated_at": "2024-06-19T03:12:05.000000Z"
+            }
+        ]
+    }
+}
+```
+
+#### 2. Get All Sub Materi
+
+> GET `http://127.0.0.1:8000/api/user/submateri`
+
+Example success Responds:
+
+```JSON
+{
+    "status": true,
+    "message": "All SubMaterials",
+    "sub_materi": {
+        "current_page": 1,
+        "data": [
+            {
+                "id": 1,
+                "nomor_sub_materi": "1",
+                "judul_sub_materi": "judul 1",
+                "id_materi": 2,
+                "created_at": "2024-06-19T03:11:33.000000Z",
+                "updated_at": "2024-06-19T03:11:33.000000Z",
+                "material": {
+                    "id": 2,
+                    "judul_materi": "judul 1",
+                    "kategori_materi": "kategori 1",
+                    "id_bab": 2,
+                    "created_at": "2024-06-19T03:11:12.000000Z",
+                    "updated_at": "2024-06-19T03:11:12.000000Z"
+                },
+                "text_material": [
+                    {
+                        "id": 1,
+                        "materi": "materi1",
+                        "terjemahan": "terjemahan1",
+                        "audio": "https://res.cloudinary.com/dtjkuzlr2/video/upload/v1718766740/xzh2izfalfvflxtuje0m.mp3",
+                        "id_sub_materi": 1,
+                        "id_kategori": 1,
+                        "created_at": "2024-06-19T03:12:20.000000Z",
+                        "updated_at": "2024-06-19T03:12:20.000000Z"
+                    }
+                ],
+                "group_text_material": [
+                    {
+                        "id": 1,
+                        "nomor_sub_bab": "1",
+                        "judul_sub_bab": "judul1",
+                        "gambar": "https://res.cloudinary.com/dtjkuzlr2/image/upload/v1718766756/rxdyuawzxce1vmwmeegx.png",
+                        "id_sub_materi": 1,
+                        "created_at": "2024-06-19T03:12:36.000000Z",
+                        "updated_at": "2024-06-19T03:12:36.000000Z"
+                    }
+                ],
+                "image_material": [
+                    {
+                        "id": 1,
+                        "materi": "materi 1",
+                        "id_sub_materi": 1,
+                        "id_kategori": 1,
+                        "created_at": "2024-06-19T03:12:05.000000Z",
+                        "updated_at": "2024-06-19T03:12:05.000000Z"
+                    }
+                ]
+            },
+            {
+                "id": 2,
+                "nomor_sub_materi": "1",
+                "judul_sub_materi": "judul 1",
+                "id_materi": 2,
+                "created_at": "2024-06-19T03:26:27.000000Z",
+                "updated_at": "2024-06-19T03:26:27.000000Z",
+                "material": {
+                    "id": 2,
+                    "judul_materi": "judul 1",
+                    "kategori_materi": "kategori 1",
+                    "id_bab": 2,
+                    "created_at": "2024-06-19T03:11:12.000000Z",
+                    "updated_at": "2024-06-19T03:11:12.000000Z"
+                },
+                "text_material": [],
+                "group_text_material": [],
+                "image_material": []
+            }
+        ],
+        "first_page_url": "http://127.0.0.1:8000/api/user/submateri?page=1",
+        "from": 1,
+        "last_page": 1,
+        "last_page_url": "http://127.0.0.1:8000/api/user/submateri?page=1",
+        "links": [
+            {
+                "url": null,
+                "label": "&laquo; Previous",
+                "active": false
+            },
+            {
+                "url": "http://127.0.0.1:8000/api/user/submateri?page=1",
+                "label": "1",
+                "active": true
+            },
+            {
+                "url": null,
+                "label": "Next &raquo;",
+                "active": false
+            }
+        ],
+        "next_page_url": null,
+        "path": "http://127.0.0.1:8000/api/user/submateri",
+        "per_page": 10,
+        "prev_page_url": null,
+        "to": 2,
+        "total": 2
     }
 }
 ```
