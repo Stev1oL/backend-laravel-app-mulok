@@ -27,7 +27,7 @@ php artisan serve
 http://127.0.0.1:8000/api/
 ```
 
-## Routes
+## Routes Web
 
 ### Admin Auth
 
@@ -40,6 +40,12 @@ http://127.0.0.1:8000/api/
 
 ### Manage Semester
 
+-   POST <http://localhost:8000/api/semesters> (post data)
+-   GET <http://localhost:8000/api/semesters> (get all data)
+-   GET <http://localhost:8000/api/semester/{id}> (get data)
+-   POST <http://localhost:8000/api/semester/{id}> (edit data)
+-   DELETE <http://localhost:8000/api/semester/{id}> (delete data)
+
 ### Manage Students
 
 -   POST <http://localhost:8000/api/students> (post data)
@@ -47,6 +53,73 @@ http://127.0.0.1:8000/api/
 -   GET <http://localhost:8000/api/student/{id}> (get data)
 -   POST <http://localhost:8000/api/student/{id}> (edit data)
 -   DELETE <http://localhost:8000/api/student/{id}> (delete data)
+
+### Manage Bab
+
+-   POST <http://localhost:8000/api/chapters> (post data)
+-   GET <http://localhost:8000/api/chapters> (get all data)
+-   GET <http://localhost:8000/api/chapter/{id}> (get data)
+-   POST <http://localhost:8000/api/chapter/{id}> (edit data)
+-   DELETE <http://localhost:8000/api/chapter/{id}> (delete data)
+
+### Manage Materi
+
+-   POST <http://localhost:8000/api/materials> (post data)
+-   GET <http://localhost:8000/api/materials> (get all data)
+-   GET <http://localhost:8000/api/material/{id}> (get data)
+-   POST <http://localhost:8000/api/material/{id}> (edit data)
+-   DELETE <http://localhost:8000/api/material/{id}> (delete data)
+
+### Manage Kategori
+
+-   POST <http://localhost:8000/api/categories> (post data)
+-   GET <http://localhost:8000/api/categories> (get all data)
+-   GET <http://localhost:8000/api/category/{id}> (get data)
+-   POST <http://localhost:8000/api/category/{id}> (edit data)
+-   DELETE <http://localhost:8000/api/category/{id}> (delete data)
+
+### Manage Sub Materi
+
+-   POST <http://localhost:8000/api/submateri> (post data)
+-   GET <http://localhost:8000/api/submateri> (get all data)
+-   GET <http://localhost:8000/api/submateri/{id}> (get data)
+-   POST <http://localhost:8000/api/submateri/{id}> (edit data)
+-   DELETE <http://localhost:8000/api/submateri/{id}> (delete data)
+
+## Routes Mobile
+
+### Manage Akun
+
+-   POST <http://localhost:8000/api/user/login> (login)
+-   GET <http://localhost:8000/api/user> (get data)
+-   POST <http://localhost:8000/api/user> (edit data)
+-   PUT <http://localhost:8000/api/user/password> (change password)-STILL NOT WORKING
+-   POST <http://localhost:8000/api/user/logout> (logout)
+
+### Manage Bab
+
+-   GET <http://localhost:8000/api/chapters> (get all data)
+-   GET <http://localhost:8000/api/chapter/{id}> (get data)
+
+### Manage Kategori
+
+-   GET <http://localhost:8000/api/categories> (get all data)
+-   GET <http://localhost:8000/api/category/{id}> (get data)
+
+### Manage Materi
+
+-   GET <http://localhost:8000/api/materials> (get all data)
+-   GET <http://localhost:8000/api/material/{id}> (get data)
+
+### Manage Sub Materi
+
+-   GET <http://localhost:8000/api/submateri> (get all data)
+-   GET <http://localhost:8000/api/submateri/{id}> (get data)
+
+### Manage Kamus
+
+-   GET <http://localhost:8000/api/dictionaries> (get all data)
+-   GET <http://localhost:8000/api/dictionary/{id}> (get data)
 
 ## Documentation
 
