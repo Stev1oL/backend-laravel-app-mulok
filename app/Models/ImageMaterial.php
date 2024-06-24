@@ -10,7 +10,7 @@ class ImageMaterial extends Model
     use HasFactory;
 
     protected $fillable = [
-        'materi',
+        'gambar',
         'id_sub_materi',
         'id_kategori',
     ];

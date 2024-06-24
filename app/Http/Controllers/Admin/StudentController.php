@@ -63,7 +63,7 @@ class StudentController extends Controller
 
     public function getAllStudent()
     {
-        $student = Student::with(['semester'])->all();
+        $student = Student::with(['semester'])->get();
         if (!$student) {
             return response()->json([
                 'status' => false,

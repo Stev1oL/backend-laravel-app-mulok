@@ -14,6 +14,7 @@ class ChapterController extends Controller
         $validatedData = Validator::make($request->all(), [
             'nomor_bab' => 'required',
             'judul_bab' => 'required|string',
+            'gambar' => 'image|mimes:jpeg,png,jpg',
             'id_semester' => 'required|exists:semesters,id',
         ]);
 
@@ -24,9 +25,12 @@ class ChapterController extends Controller
                 'errors' => $validatedData->errors()
             ], 400);
         } else {
+            $uploadedFileUrl = cloudinary()->upload($request->file('gambar')->getRealPath())->getSecurePath();
+
             $chapter = Chapter::create([
                 'nomor_bab' => $request->nomor_bab,
                 'judul_bab' => $request->judul_bab,
+                'gambar' => $uploadedFileUrl,
                 'id_semester' => $request->id_semester,
             ]);
 
@@ -79,6 +83,7 @@ class ChapterController extends Controller
         $validatedData = Validator::make($request->all(), [
             'nomor_bab',
             'judul_bab' => 'string',
+            'gambar' => 'image|mimes:jpeg,png,jpg',
             'id_semester' => 'exists:semesters,id',
         ]);
 
@@ -100,6 +105,10 @@ class ChapterController extends Controller
             $chapter->nomor_bab = $request['nomor_bab'];
             $chapter->judul_bab = $request['judul_bab'];
             $chapter->id_semester = $request['id_semester'];
+            if ($request->hasFile('gambar')) {
+                $uploadedFileUrl = cloudinary()->upload($request->file('gambar')->getRealPath())->getSecurePath();
+                $chapter->gambar = $uploadedFileUrl;
+            }
 
             $chapter->save();
 

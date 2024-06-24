@@ -14,7 +14,6 @@ class SubMaterialUserController extends Controller
             'material',
             'category',
             'textMaterial',
-            'groupTextMaterial',
             'imageMaterial'
         ])->findOrFail($id);
 
@@ -38,7 +37,6 @@ class SubMaterialUserController extends Controller
             'material',
             'category',
             'textMaterial',
-            'groupTextMaterial',
             'imageMaterial'
         ])->paginate($perPage);
 

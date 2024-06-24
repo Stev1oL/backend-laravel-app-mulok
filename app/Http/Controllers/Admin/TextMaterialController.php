@@ -15,7 +15,7 @@ class TextMaterialController extends Controller
         $validatedData = Validator::make($request->all(), [
             'materi' => 'required|string',
             'terjemahan' => 'required|string',
-            'audio' => 'file|mimes:mp3,wav,ogg,aac,flac',
+            'audio' => 'file|mimes:mp3,wav,ogg,aac,flac,m4a',
             'id_sub_materi' => 'required|exists:sub_materials,id',
             'id_kategori' => 'required|exists:category_materials,id',
         ]);
@@ -93,7 +93,7 @@ class TextMaterialController extends Controller
         $validatedData = Validator::make($request->all(), [
             'materi' => 'string',
             'terjemahan' => 'string',
-            'audio' => 'file|mimes:mp3,wav,ogg,aac,flac',
+            'audio' => 'file|mimes:mp3,wav,ogg,aac,flac,m4a',
             'id_sub_materi' => 'exists:sub_materials,id',
             'id_kategori' => 'exists:category_materials,id',
         ]);

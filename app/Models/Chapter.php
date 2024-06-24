@@ -12,6 +12,7 @@ class Chapter extends Model
     protected $fillable = [
         'nomor_bab',
         'judul_bab',
+        'gambar',
         'id_semester',
     ];
 

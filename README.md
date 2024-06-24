@@ -31,95 +31,95 @@ http://127.0.0.1:8000/api/
 
 ### Admin Auth
 
--   POST <http://localhost:8000/api/admin/register>
--   POST <http://localhost:8000/api/admin/login>
--   POST <http://localhost:8000/api/admin/logout> (need authorization)
--   GET <http://localhost:8000/api/admin> (need authorization) - get detail
--   POST <http://localhost:8000/api/admin> (need authorization) - edit
--   PUT <http://localhost:8000/api/admin/password> (need authorization) - change password
+-   POST <{{url-backend}}/api/admin/register>
+-   POST <{{url-backend}}/api/admin/login>
+-   POST <{{url-backend}}/api/admin/logout> (need authorization)
+-   GET <{{url-backend}}/api/admin> (need authorization) - get detail
+-   POST <{{url-backend}}/api/admin> (need authorization) - edit
+-   PUT <{{url-backend}}/api/admin/password> (need authorization) - change password
 
 ### Manage Semester
 
--   POST <http://localhost:8000/api/semesters> (post data)
--   GET <http://localhost:8000/api/semesters> (get all data)
--   GET <http://localhost:8000/api/semester/{id}> (get data)
--   POST <http://localhost:8000/api/semester/{id}> (edit data)
--   DELETE <http://localhost:8000/api/semester/{id}> (delete data)
+-   POST <{{url-backend}}/api/semesters> (post data)
+-   GET <{{url-backend}}/api/semesters> (get all data)
+-   GET <{{url-backend}}/api/semester/{id}> (get data)
+-   POST <{{url-backend}}/api/semester/{id}> (edit data)
+-   DELETE <{{url-backend}}/api/semester/{id}> (delete data)
 
 ### Manage Students
 
--   POST <http://localhost:8000/api/students> (post data)
--   GET <http://localhost:8000/api/students> (get all data)
--   GET <http://localhost:8000/api/student/{id}> (get data)
--   POST <http://localhost:8000/api/student/{id}> (edit data)
--   DELETE <http://localhost:8000/api/student/{id}> (delete data)
+-   POST <{{url-backend}}/api/students> (post data)
+-   GET <{{url-backend}}/api/students> (get all data)
+-   GET <{{url-backend}}/api/student/{id}> (get data)
+-   POST <{{url-backend}}/api/student/{id}> (edit data)
+-   DELETE <{{url-backend}}/api/student/{id}> (delete data)
 
 ### Manage Bab
 
--   POST <http://localhost:8000/api/chapters> (post data)
--   GET <http://localhost:8000/api/chapters> (get all data)
--   GET <http://localhost:8000/api/chapter/{id}> (get data)
--   POST <http://localhost:8000/api/chapter/{id}> (edit data)
--   DELETE <http://localhost:8000/api/chapter/{id}> (delete data)
+-   POST <{{url-backend}}/api/chapters> (post data)
+-   GET <{{url-backend}}/api/chapters> (get all data)
+-   GET <{{url-backend}}/api/chapter/{id}> (get data)
+-   POST <{{url-backend}}/api/chapter/{id}> (edit data)
+-   DELETE <{{url-backend}}/api/chapter/{id}> (delete data)
 
 ### Manage Materi
 
--   POST <http://localhost:8000/api/materials> (post data)
--   GET <http://localhost:8000/api/materials> (get all data)
--   GET <http://localhost:8000/api/material/{id}> (get data)
--   POST <http://localhost:8000/api/material/{id}> (edit data)
--   DELETE <http://localhost:8000/api/material/{id}> (delete data)
+-   POST <{{url-backend}}/api/materials> (post data)
+-   GET <{{url-backend}}/api/materials> (get all data)
+-   GET <{{url-backend}}/api/material/{id}> (get data)
+-   POST <{{url-backend}}/api/material/{id}> (edit data)
+-   DELETE <{{url-backend}}/api/material/{id}> (delete data)
 
 ### Manage Kategori
 
--   POST <http://localhost:8000/api/categories> (post data)
--   GET <http://localhost:8000/api/categories> (get all data)
--   GET <http://localhost:8000/api/category/{id}> (get data)
--   POST <http://localhost:8000/api/category/{id}> (edit data)
--   DELETE <http://localhost:8000/api/category/{id}> (delete data)
+-   POST <{{url-backend}}/api/categories> (post data)
+-   GET <{{url-backend}}/api/categories> (get all data)
+-   GET <{{url-backend}}/api/category/{id}> (get data)
+-   POST <{{url-backend}}/api/category/{id}> (edit data)
+-   DELETE <{{url-backend}}/api/category/{id}> (delete data)
 
 ### Manage Sub Materi
 
--   POST <http://localhost:8000/api/submateri> (post data)
--   GET <http://localhost:8000/api/submateri> (get all data)
--   GET <http://localhost:8000/api/submateri/{id}> (get data)
--   POST <http://localhost:8000/api/submateri/{id}> (edit data)
--   DELETE <http://localhost:8000/api/submateri/{id}> (delete data)
+-   POST <{{url-backend}}/api/submateri> (post data)
+-   GET <{{url-backend}}/api/submateri> (get all data)
+-   GET <{{url-backend}}/api/submateri/{id}> (get data)
+-   POST <{{url-backend}}/api/submateri/{id}> (edit data)
+-   DELETE <{{url-backend}}/api/submateri/{id}> (delete data)
 
 ## Routes Mobile
 
 ### Manage Akun
 
--   POST <http://localhost:8000/api/user/login> (login)
--   GET <http://localhost:8000/api/user> (get data)
--   POST <http://localhost:8000/api/user> (edit data)
--   PUT <http://localhost:8000/api/user/password> (change password)-STILL NOT WORKING
--   POST <http://localhost:8000/api/user/logout> (logout)
+-   POST <{{url-backend}}/api/user/login> (login)
+-   GET <{{url-backend}}/api/user> (get data)
+-   POST <{{url-backend}}/api/user> (edit data)
+-   PUT <{{url-backend}}/api/user/password> (change password)-STILL NOT WORKING
+-   POST <{{url-backend}}/api/user/logout> (logout)
 
 ### Manage Bab
 
--   GET <http://localhost:8000/api/chapters> (get all data)
--   GET <http://localhost:8000/api/chapter/{id}> (get data)
+-   GET <{{url-backend}}/api/chapters> (get all data)
+-   GET <{{url-backend}}/api/chapter/{id}> (get data)
 
 ### Manage Kategori
 
--   GET <http://localhost:8000/api/categories> (get all data)
--   GET <http://localhost:8000/api/category/{id}> (get data)
+-   GET <{{url-backend}}/api/categories> (get all data)
+-   GET <{{url-backend}}/api/category/{id}> (get data)
 
 ### Manage Materi
 
--   GET <http://localhost:8000/api/materials> (get all data)
--   GET <http://localhost:8000/api/material/{id}> (get data)
+-   GET <{{url-backend}}/api/materials> (get all data)
+-   GET <{{url-backend}}/api/material/{id}> (get data)
 
 ### Manage Sub Materi
 
--   GET <http://localhost:8000/api/submateri> (get all data)
--   GET <http://localhost:8000/api/submateri/{id}> (get data)
+-   GET <{{url-backend}}/api/submateri> (get all data)
+-   GET <{{url-backend}}/api/submateri/{id}> (get data)
 
 ### Manage Kamus
 
--   GET <http://localhost:8000/api/dictionaries> (get all data)
--   GET <http://localhost:8000/api/dictionary/{id}> (get data)
+-   GET <{{url-backend}}/api/dictionaries> (get all data)
+-   GET <{{url-backend}}/api/dictionary/{id}> (get data)
 
 ## Documentation
 
@@ -129,7 +129,7 @@ http://127.0.0.1:8000/api/
 
 #### 1. Register
 
-> POST `http://localhost:8000/api/admin/register`
+> POST `{{url-backend}}/api/admin/register`
 
 form-data, application/json
 
@@ -139,7 +139,7 @@ username: required|unique
 password: required
 ```
 
-Example success Responds:
+Example success Response:
 
 ```JSON
 {
@@ -154,7 +154,7 @@ Example success Responds:
 
 #### 1. Create Bab
 
-> POST `http://localhost:8000/api/chapters`
+> POST `{{url-backend}}/api/chapters`
 
 form-data, application/json
 
@@ -164,7 +164,7 @@ judul_bab: required|string
 id_semester: required
 ```
 
-Example success Responds:
+Example success Response:
 
 ```JSON
 {
@@ -184,9 +184,9 @@ Example success Responds:
 
 #### 2. Get Bab By ID
 
-> GET `http://localhost:8000/api/chapter/{id}`
+> GET `{{url-backend}}/api/chapter/{id}`
 
-Example success Responds:
+Example success Response:
 
 ```JSON
 {
@@ -205,13 +205,98 @@ Example success Responds:
 
 ## USER MOBILE
 
+### Akun
+
+#### 1. Login
+
+> POST `{{url-backend}}/api/user/login`
+
+form-data, application/json
+
+```
+username: required|unique
+password: required
+```
+
+Example Request:
+
+```
+username: admin12
+password: admin12
+```
+
+Example success Response:
+
+```JSON
+{
+    "success": true,
+    "message": "User Logged In Successfully",
+    "data": {
+        "id": 1,
+        "nama": "nama1",
+        "nisn": "6251515",
+        "username": "admin12",
+        "id_semester": 1,
+        "created_at": "2024-06-18T22:21:19.000000Z",
+        "updated_at": "2024-06-18T22:21:19.000000Z"
+    },
+    "token": "2|SXoKxZlfeichrzTGhwu7xZKJEAwC5ErAGYF59Fn4401c564d"
+}
+```
+
+#### 2. Get Account Detail
+
+> GET `{{url-backend}}/api/user`
+
+Example Request:
+
+```Bearer-Token Authorization
+token: 2|SXoKxZlfeichrzTGhwu7xZKJEAwC5ErAGYF59Fn4401c564d
+```
+
+Example success Response:
+
+```JSON
+{
+    "id": 1,
+    "nama": "nama1",
+    "username": "admin12",
+    "password": "admin12",
+    "semester": {
+        "id": 1,
+        "semester": "1",
+        "created_at": "2024-06-08T05:03:58.000000Z",
+        "updated_at": "2024-06-08T05:03:58.000000Z"
+    }
+}
+```
+
+#### 3. Logout
+
+> POST `{{url-backend}}/api/user/logout`
+
+Example Request:
+
+```Bearer-Token Authorization
+token: 2|SXoKxZlfeichrzTGhwu7xZKJEAwC5ErAGYF59Fn4401c564d
+```
+
+Example success Response:
+
+```JSON
+{
+    "success": true,
+    "message": "Successfully logged out",
+}
+```
+
 ### Bab / Chapter
 
 #### 1. Get Bab By ID
 
-> GET `http://localhost:8000/api/user/chapter/{id}`
+> GET `{{url-backend}}/api/user/chapter/{id}`
 
-Example success Responds:
+Example success Response:
 
 ```JSON
 {
@@ -256,9 +341,9 @@ Example success Responds:
 
 #### 2. Get All Bab
 
-> GET `http://localhost:8000/api/user/chapters`
+> GET `{{url-backend}}/api/user/chapters`
 
-Example success Responds:
+Example success Response:
 
 ```JSON
 {
@@ -338,7 +423,7 @@ Example success Responds:
 
 > GET `http://127.0.0.1:8000/api/chapters?page=1`
 
-Example success Responds:
+Example success Response:
 
 ```JSON
 {
@@ -420,7 +505,7 @@ Example success Responds:
 
 > GET `http://127.0.0.1:8000/api/user/material/{id}`
 
-Example success Responds:
+Example success Response:
 
 ```JSON
 {
@@ -467,7 +552,7 @@ Example success Responds:
 
 > GET `http://127.0.0.1:8000/api/user/materials`
 
-Example success Responds:
+Example success Response:
 
 ```JSON
 {
@@ -575,7 +660,7 @@ Example success Responds:
 
 > GET `http://127.0.0.1:8000/api/user/submateri/{id}`
 
-Example success Responds:
+Example success Response:
 
 ```JSON
 {
@@ -652,7 +737,7 @@ Example success Responds:
 
 > GET `http://127.0.0.1:8000/api/user/submateri`
 
-Example success Responds:
+Example success Response:
 
 ```JSON
 {
@@ -814,7 +899,7 @@ Example success Responds:
 
 > GET `http://127.0.0.1:8000/api/user/dictionary/{id}`
 
-Example success Responds:
+Example success Response:
 
 ```JSON
 {
@@ -843,7 +928,7 @@ Example success Responds:
 
 > GET `http://127.0.0.1:8000/api/user/dictionaries`
 
-Example success Responds:
+Example success Response:
 
 ```JSON
 {

@@ -15,7 +15,7 @@ class DictionaryController extends Controller
         $validatedData = Validator::make($request->all(), [
             'bahasa_dayak' => 'required|string',
             'terjemahan' => 'required|string',
-            'audio' => 'file|mimes:mp3,wav,ogg,aac,flac',
+            'audio' => 'file|mimes:mp3,wav,ogg,aac,flac,m4a',
             'id_bab' => 'required|exists:chapters,id'
         ]);
 
@@ -91,7 +91,7 @@ class DictionaryController extends Controller
         $validatedData = Validator::make($request->all(), [
             'bahasa_dayak' => 'string',
             'terjemahan' => 'string',
-            'audio' => 'file|mimes:mp3,wav,ogg,aac,flac',
+            'audio' => 'file|mimes:mp3,wav,ogg,aac,flac,m4a',
             'id_bab' => 'exists:chapters,id'
         ]);
 

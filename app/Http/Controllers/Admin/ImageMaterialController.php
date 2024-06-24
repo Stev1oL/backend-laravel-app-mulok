@@ -12,7 +12,7 @@ class ImageMaterialController extends Controller
     public function createImageMaterial(Request $request)
     {
         $validatedData = Validator::make($request->all(), [
-            'materi' => 'required|string',
+            'gambar' => 'image|mimes:jpeg,png,jpg',
             'id_sub_materi' => 'required|exists:sub_materials,id',
             'id_kategori' => 'required|exists:category_materials,id',
         ]);
@@ -24,8 +24,10 @@ class ImageMaterialController extends Controller
                 'errors' => $validatedData->errors()
             ], 500);
         } else {
+            $uploadedFileUrl = cloudinary()->upload($request->file('gambar')->getRealPath())->getSecurePath();
+
             $image = ImageMaterial::create([
-                'materi' => $request->materi,
+                'gambar' => $uploadedFileUrl,
                 'id_sub_materi' => $request->id_sub_materi,
                 'id_kategori' => $request->id_kategori,
             ]);
@@ -54,9 +56,10 @@ class ImageMaterialController extends Controller
         ], 200);
     }
 
-    public function getAllImageMaterial()
+    public function getAllImageMaterial(Request $request)
     {
-        $image = ImageMaterial::with(['category', 'subMaterial'])->all();
+        $perPage = $request->input('page', 10);
+        $image = ImageMaterial::with(['category', 'subMaterial'])->paginate($perPage);
         if (!$image) {
             return response()->json([
                 'status' => false,
@@ -74,7 +77,7 @@ class ImageMaterialController extends Controller
     public function editImageMaterial($id, Request $request)
     {
         $validatedData = Validator::make($request->all(), [
-            'materi' => 'required|string',
+            'gambar' => 'image|mimes:jpeg,png,jpg',
             'id_sub_materi' => 'required|exists:sub_materials,id',
             'id_kategori' => 'required|exists:category_materials,id',
         ]);
@@ -94,9 +97,12 @@ class ImageMaterialController extends Controller
                 ], 404);
             }
 
-            $image->materi = $request['materi'];
             $image->id_sub_materi = $request['id_sub_materi'];
             $image->id_kategori = $request['id_kategori'];
+            if ($request->hasFile('gambar')) {
+                $uploadedFileUrl = cloudinary()->upload($request->file('gambar')->getRealPath())->getSecurePath();
+                $image->gambar = $uploadedFileUrl;
+            }
 
             $image->save();
 

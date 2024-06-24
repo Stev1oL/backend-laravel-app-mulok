@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nomor_bab');
             $table->string('judul_bab');
+            $table->string('gambar')->nullable();
             $table->unsignedBigInteger('id_semester');
             $table->timestamps();
 

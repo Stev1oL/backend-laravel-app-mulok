@@ -92,11 +92,11 @@ Route::post('/imagemateri/{id}', [ImageMaterialController::class, 'editImageMate
 Route::delete('/imagemateri/{id}', [ImageMaterialController::class, 'deleteImageMaterial']);
 
 // -- grup teks materi --
-Route::post('/grouptexts', [GroupTextController::class, 'createGroupText']);
-Route::get('/grouptexts', [GroupTextController::class, 'getAllGroupText']);
-Route::get('/grouptext/{id}', [GroupTextController::class, 'getGroupText']);
-Route::post('/grouptext/{id}', [GroupTextController::class, 'editGroupText']);
-Route::delete('/grouptext/{id}', [GroupTextController::class, 'deleteGroupText']);
+// Route::post('/grouptexts', [GroupTextController::class, 'createGroupText']);
+// Route::get('/grouptexts', [GroupTextController::class, 'getAllGroupText']);
+// Route::get('/grouptext/{id}', [GroupTextController::class, 'getGroupText']);
+// Route::post('/grouptext/{id}', [GroupTextController::class, 'editGroupText']);
+// Route::delete('/grouptext/{id}', [GroupTextController::class, 'deleteGroupText']);
 
 // -- teks materi --
 Route::post('/texts', [TextMaterialController::class, 'createTextMaterial']);

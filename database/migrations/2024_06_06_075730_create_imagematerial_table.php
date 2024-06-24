@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('image_materials', function (Blueprint $table) {
             $table->id();
-            $table->text('materi');
+            $table->string('gambar')->nullable();
             $table->unsignedBigInteger('id_sub_materi');
             $table->unsignedBigInteger('id_kategori');
             $table->timestamps();
