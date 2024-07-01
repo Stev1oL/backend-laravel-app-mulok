@@ -27,12 +27,11 @@ class DictionaryUserController extends Controller
         ], 200);
     }
 
-    public function getAllDictionary(Request $request)
+    public function getAllDictionary()
     {
-        $perPage = $request->input('page', 25);
         $dictionary = Dictionary::with([
             'chapter'
-        ])->paginate($perPage);
+        ])->get();
 
         if (!$dictionary) {
             return response()->json([

@@ -56,10 +56,9 @@ class ImageMaterialController extends Controller
         ], 200);
     }
 
-    public function getAllImageMaterial(Request $request)
+    public function getAllImageMaterial()
     {
-        $perPage = $request->input('page', 10);
-        $image = ImageMaterial::with(['category', 'subMaterial'])->paginate($perPage);
+        $image = ImageMaterial::with(['category', 'subMaterial'])->get();
         if (!$image) {
             return response()->json([
                 'status' => false,

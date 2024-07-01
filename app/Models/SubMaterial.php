@@ -31,11 +31,6 @@ class SubMaterial extends Model
         return $this->hasMany(TextMaterial::class, 'id_sub_materi');
     }
 
-    public function groupTextMaterial()
-    {
-        return $this->hasMany(GroupTextMaterial::class, 'id_sub_materi');
-    }
-
     public function imageMaterial()
     {
         return $this->hasMany(ImageMaterial::class, 'id_sub_materi');

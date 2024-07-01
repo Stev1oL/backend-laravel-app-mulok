@@ -60,13 +60,12 @@ class SubMaterialController extends Controller
         ], 200);
     }
 
-    public function getAllSubMaterial(Request $request)
+    public function getAllSubMaterial()
     {
-        $perPage = $request->input('page', 10);
         $submaterial = SubMaterial::with([
             'material',
             'category'
-        ])->paginate($perPage);
+        ])->get();
 
         if (!$submaterial) {
             return response()->json([

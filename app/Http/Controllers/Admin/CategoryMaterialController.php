@@ -52,7 +52,7 @@ class CategoryMaterialController extends Controller
 
     public function getAllCategory()
     {
-        $category = CategoryMaterial::all();
+        $category = CategoryMaterial::get();
         if (!$category) {
             return response()->json([
                 'status' => false,

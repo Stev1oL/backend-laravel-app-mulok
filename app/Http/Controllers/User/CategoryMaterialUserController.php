@@ -15,6 +15,7 @@ class CategoryMaterialUserController extends Controller
             'imageMaterial',
             'textMaterial'
         ])->findOrFail($id);
+
         if (!$category) {
             return response()->json([
                 'status' => false,
@@ -35,6 +36,7 @@ class CategoryMaterialUserController extends Controller
             'imageMaterial',
             'textMaterial'
         ])->get();
+
         if (!$category) {
             return response()->json([
                 'status' => false,

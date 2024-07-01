@@ -15,7 +15,7 @@ class TextMaterialController extends Controller
         $validatedData = Validator::make($request->all(), [
             'materi' => 'required|string',
             'terjemahan' => 'required|string',
-            'audio' => 'file|mimes:mp3,wav,ogg,aac,flac,m4a',
+            'audio' => 'file|mimes:mp3,wav,ogg,aac,flac,mp4a',
             'id_sub_materi' => 'required|exists:sub_materials,id',
             'id_kategori' => 'required|exists:category_materials,id',
         ]);
@@ -69,10 +69,9 @@ class TextMaterialController extends Controller
         ], 200);
     }
 
-    public function getAllTextMaterial(Request $request)
+    public function getAllTextMaterial()
     {
-        $perPage = $request->input('page', 10);
-        $text = TextMaterial::with(['category', 'subMaterial'])->paginate($perPage);
+        $text = TextMaterial::with(['category', 'subMaterial'])->get();
 
         if (!$text) {
             return response()->json([
@@ -93,7 +92,7 @@ class TextMaterialController extends Controller
         $validatedData = Validator::make($request->all(), [
             'materi' => 'string',
             'terjemahan' => 'string',
-            'audio' => 'file|mimes:mp3,wav,ogg,aac,flac,m4a',
+            'audio' => 'file|mimes:mp3,wav,ogg,aac,flac,mp4a',
             'id_sub_materi' => 'exists:sub_materials,id',
             'id_kategori' => 'exists:category_materials,id',
         ]);

@@ -30,14 +30,13 @@ class ChapterUserController extends Controller
         }
     }
 
-    public function getAllChapter(Request $request)
+    public function getAllChapter()
     {
-        $perPage = $request->input('page', 10);
         $chapters = Chapter::with([
             'semester',
             'materials',
             'dictionary',
-        ])->paginate($perPage);
+        ])->get();
 
         if ($chapters->isEmpty()) {
             return response()->json([

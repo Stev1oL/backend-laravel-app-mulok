@@ -12,7 +12,8 @@ class MaterialUserController extends Controller
     {
         $material = Material::with([
             'chapter',
-            'subMaterial'
+            'subMaterial.textMaterial',
+            'subMaterial.imageMaterial',
         ])->findOrFail($id);
 
         if (!$material) {
@@ -28,13 +29,13 @@ class MaterialUserController extends Controller
         ], 200);
     }
 
-    public function getAllMaterial(Request $request)
+    public function getAllMaterial()
     {
-        $perPage = $request->input('page', 10);
         $material = Material::with([
             'chapter',
-            'subMaterial'
-        ])->paginate($perPage);
+            'subMaterial.textMaterial',
+            'subMaterial.imageMaterial',
+        ])->get();
 
         if (!$material) {
             return response()->json([

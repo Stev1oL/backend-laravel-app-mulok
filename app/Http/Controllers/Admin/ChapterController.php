@@ -59,10 +59,9 @@ class ChapterController extends Controller
         ], 200);
     }
 
-    public function getAllChapter(Request $request)
+    public function getAllChapter()
     {
-        $perPage = $request->input('page', 10);
-        $chapter = Chapter::with(['semester'])->paginate($perPage);
+        $chapter = Chapter::with(['semester'])->get();
 
         if (!$chapter) {
             return response()->json([

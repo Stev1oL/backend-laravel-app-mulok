@@ -52,7 +52,7 @@ class SemesterController extends Controller
 
     public function getAllSemester()
     {
-        $semester = Semester::all();
+        $semester = Semester::get();
         if (!$semester) {
             return response()->json([
                 'status' => false,

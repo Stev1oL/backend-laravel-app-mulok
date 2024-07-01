@@ -53,10 +53,9 @@ class MaterialController extends Controller
         ], 200);
     }
 
-    public function getAllMaterial(Request $request)
+    public function getAllMaterial()
     {
-        $perPage = $request->input('page', 10);
-        $material = Material::with(['chapter'])->paginate($perPage);
+        $material = Material::with(['chapter'])->get();
 
         if (!$material) {
             return response()->json([
