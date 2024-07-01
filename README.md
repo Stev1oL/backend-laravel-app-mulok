@@ -1141,27 +1141,19 @@ Example success Response:
 ```JSON
 {
     "status": true,
-    "gambar": {
-        "id": 6,
-        "gambar": "https://res.cloudinary.com/dtjkuzlr2/image/upload/v1719834672/obp0nnq87uvykvlscjor.png",
-        "id_sub_materi": 30,
-        "id_kategori": 11,
-        "created_at": "2024-07-01T11:50:37.000000Z",
-        "updated_at": "2024-07-01T11:51:13.000000Z",
-        "category": {
-            "id": 11,
-            "nama_kategori": "Terjemahan Dialog Bergambar",
-            "created_at": "2024-06-30T12:26:11.000000Z",
-            "updated_at": "2024-06-30T12:26:11.000000Z"
-        },
-        "sub_material": {
-            "id": 30,
-            "nomor_sub_materi": "2",
-            "judul_sub_materi": "Manyampai Peteh Mahalau Telepon",
-            "id_materi": 7,
-            "id_kategori": 7,
-            "created_at": "2024-06-30T11:26:40.000000Z",
-            "updated_at": "2024-06-30T11:26:40.000000Z"
+    "data": {
+        "id": 2,
+        "nama": "admin2",
+        "nisn": "654321",
+        "username": "admin21",
+        "id_semester": 2,
+        "created_at": "2024-06-30T23:19:15.000000Z",
+        "updated_at": "2024-06-30T23:19:15.000000Z",
+        "semester": {
+            "id": 2,
+            "semester": "2",
+            "created_at": "2024-06-24T16:16:07.000000Z",
+            "updated_at": "2024-06-24T16:16:07.000000Z"
         }
     }
 }
@@ -1176,52 +1168,36 @@ Example success Response:
 ```JSON
 {
     "status": true,
-    "message": "All ImageMaterials",
-    "gambar": [
+    "message": "All students",
+    "data": [
         {
             "id": 1,
-            "gambar": "https://res.cloudinary.com/dtjkuzlr2/image/upload/v1719247576/bduwtdxbpkn2dba2n9jt.png",
-            "id_sub_materi": 1,
-            "id_kategori": 2,
-            "created_at": "2024-06-24T16:45:28.000000Z",
-            "updated_at": "2024-06-24T16:46:17.000000Z",
-            "category": {
-                "id": 2,
-                "nama_kategori": "Kamus",
-                "created_at": "2024-06-24T16:42:41.000000Z",
-                "updated_at": "2024-06-26T13:43:15.000000Z"
-            },
-            "sub_material": {
+            "nama": "admin",
+            "nisn": "123456",
+            "username": "admin12",
+            "id_semester": 1,
+            "created_at": "2024-06-24T16:16:57.000000Z",
+            "updated_at": "2024-06-24T16:16:57.000000Z",
+            "semester": {
                 "id": 1,
-                "nomor_sub_materi": "1",
-                "judul_sub_materi": "Pasar Kahayan Lepah Bakeho",
-                "id_materi": 1,
-                "id_kategori": 1,
-                "created_at": "2024-06-24T16:44:39.000000Z",
-                "updated_at": "2024-06-26T13:41:03.000000Z"
+                "semester": "1",
+                "created_at": "2024-06-24T16:15:57.000000Z",
+                "updated_at": "2024-06-24T16:15:57.000000Z"
             }
         },
         {
             "id": 2,
-            "gambar": "https://res.cloudinary.com/dtjkuzlr2/image/upload/v1719750386/st4cxnvzy94kh6ez9cpx.png",
-            "id_sub_materi": 29,
-            "id_kategori": 7,
-            "created_at": "2024-06-30T12:26:28.000000Z",
-            "updated_at": "2024-06-30T12:26:28.000000Z",
-            "category": {
-                "id": 7,
-                "nama_kategori": "Dialog Bergambar",
-                "created_at": "2024-06-30T06:51:20.000000Z",
-                "updated_at": "2024-06-30T06:51:20.000000Z"
-            },
-            "sub_material": {
-                "id": 29,
-                "nomor_sub_materi": "1",
-                "judul_sub_materi": "Manyampai Peteh Mahalau Telepon",
-                "id_materi": 7,
-                "id_kategori": 7,
-                "created_at": "2024-06-30T11:26:36.000000Z",
-                "updated_at": "2024-06-30T11:26:36.000000Z"
+            "nama": "admin2",
+            "nisn": "654321",
+            "username": "admin21",
+            "id_semester": 2,
+            "created_at": "2024-06-30T23:19:15.000000Z",
+            "updated_at": "2024-06-30T23:19:15.000000Z",
+            "semester": {
+                "id": 2,
+                "semester": "2",
+                "created_at": "2024-06-24T16:16:07.000000Z",
+                "updated_at": "2024-06-24T16:16:07.000000Z"
             }
         }
     ]
@@ -1247,15 +1223,16 @@ Example success Response:
 ```JSON
 {
     "success": true,
-    "message": "ImageMaterial updated successfully",
-    "gambar": {
-        "id": 6,
-        "gambar": "https://res.cloudinary.com/dtjkuzlr2/image/upload/v1719834672/obp0nnq87uvykvlscjor.png",
-        "id_sub_materi": "30",
-        "id_kategori": "11",
-        "created_at": "2024-07-01T11:50:37.000000Z",
-        "updated_at": "2024-07-01T11:51:13.000000Z"
-  }
+    "message": "Student updated successfully",
+    "data": {
+        "nama": "admin2",
+        "nisn": "654321",
+        "username": "admin21",
+        "id_semester": "2",
+        "updated_at": "2024-06-30T23:19:15.000000Z",
+        "created_at": "2024-06-30T23:19:15.000000Z",
+        "id": 2
+    }
 }
 ```
 
@@ -1269,7 +1246,7 @@ Example success Response:
 {
     "response": 200,
     "status": true,
-    "message": "ImageMaterial deleted successfully"
+    "message": "Student deleted successfully"
 }
 ```
 
