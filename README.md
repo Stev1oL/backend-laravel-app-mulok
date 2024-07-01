@@ -166,6 +166,122 @@ Example success Response:
 }
 ```
 
+### Semester
+
+#### 1. Create Semester
+
+> POST `{{url-backend}}/api/semesters`
+
+form-data, application/json
+
+```
+semester: required|integer
+```
+
+Example success Response:
+
+```JSON
+{
+    "success": true,
+    "message": "Semester created successfully",
+    "semester": {
+        "semester": "3",
+        "updated_at": "2024-07-01T13:09:30.000000Z",
+        "created_at": "2024-07-01T13:09:30.000000Z",
+        "id": 3
+    }
+}
+```
+
+#### 2. Get Semester By ID
+
+> GET `{{url-backend}}/api/semester/{id}`
+
+Example success Response:
+
+```JSON
+{
+    "status": true,
+    "semester": {
+        "id": 1,
+        "semester": "1",
+        "created_at": "2024-06-24T16:15:57.000000Z",
+        "updated_at": "2024-06-24T16:15:57.000000Z"
+    }
+}
+```
+
+#### 3. Get All Semester
+
+> GET `{{url-backend}}/api/semesters`
+
+Example success Response:
+
+```JSON
+{
+    "status": true,
+    "message": "All semesters",
+    "semester": [
+        {
+            "id": 1,
+            "semester": "1",
+            "created_at": "2024-06-24T16:15:57.000000Z",
+            "updated_at": "2024-06-24T16:15:57.000000Z"
+        },
+        {
+            "id": 2,
+            "semester": "2",
+            "created_at": "2024-06-24T16:16:07.000000Z",
+            "updated_at": "2024-06-24T16:16:07.000000Z"
+        },
+        {
+            "id": 3,
+            "semester": "3",
+            "created_at": "2024-07-01T13:09:30.000000Z",
+            "updated_at": "2024-07-01T13:09:30.000000Z"
+        }
+    ]
+}
+```
+
+#### 4. Edit Semester By ID
+
+> POST `{{url-backend}}/api/semester/{id}`
+
+form-data, application/json
+
+```
+semester
+```
+
+Example success Response:
+
+```JSON
+{
+    "success": true,
+    "message": "Semester updated successfully",
+    "semester": {
+        "id": 3,
+        "semester": "4",
+        "created_at": "2024-07-01T13:09:30.000000Z",
+        "updated_at": "2024-07-01T13:10:38.000000Z"
+    }
+}
+```
+
+#### 5. Delete Semester By ID
+
+> DELETE `{{url-backend}}/api/semester/{id}`
+
+Example success Response:
+
+```JSON
+{
+    "status": true,
+    "message": "Semester deleted successfully"
+}
+```
+
 ### Bab / Chapter
 
 #### 1. Create Bab
