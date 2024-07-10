@@ -74,8 +74,8 @@ class MaterialController extends Controller
     public function editMaterial($id, Request $request)
     {
         $validatedData = Validator::make($request->all(), [
-            'judul_materi' => 'required|string',
-            'id_bab' => 'required|exists:chapters,id',
+            'judul_materi' => 'string',
+            'id_bab' => 'exists:chapters,id',
         ]);
 
         if ($validatedData->fails()) {

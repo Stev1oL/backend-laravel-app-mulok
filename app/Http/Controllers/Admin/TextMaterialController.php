@@ -28,7 +28,11 @@ class TextMaterialController extends Controller
             ], 400);
         } else {
             try {
-                $uploadedFileUrl = cloudinary()->uploadFile($request->file('audio')->getRealPath())->getSecurePath();
+                if ($request->hasFile('audio')) {
+                    $uploadedFileUrl = cloudinary()->uploadFile($request->file('audio')->getRealPath())->getSecurePath();
+                } else {
+                    $uploadedFileUrl = null;
+                }
 
                 $text = TextMaterial::create([
                     'materi' => $request->materi,

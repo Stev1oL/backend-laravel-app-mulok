@@ -25,7 +25,11 @@ class ChapterController extends Controller
                 'errors' => $validatedData->errors()
             ], 400);
         } else {
-            $uploadedFileUrl = cloudinary()->upload($request->file('gambar')->getRealPath())->getSecurePath();
+            if ($request->hasFile('gambar')) {
+                $uploadedFileUrl = cloudinary()->upload($request->file('gambar')->getRealPath())->getSecurePath();
+            } else {
+                $uploadedFileUrl = null;
+            }
 
             $chapter = Chapter::create([
                 'nomor_bab' => $request->nomor_bab,

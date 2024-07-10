@@ -24,7 +24,11 @@ class ImageMaterialController extends Controller
                 'errors' => $validatedData->errors()
             ], 500);
         } else {
-            $uploadedFileUrl = cloudinary()->upload($request->file('gambar')->getRealPath())->getSecurePath();
+            if ($request->hasFile('gambar')) {
+                $uploadedFileUrl = cloudinary()->upload($request->file('gambar')->getRealPath())->getSecurePath();
+            } else {
+                $uploadedFileUrl = null;
+            }
 
             $image = ImageMaterial::create([
                 'gambar' => $uploadedFileUrl,
@@ -77,8 +81,8 @@ class ImageMaterialController extends Controller
     {
         $validatedData = Validator::make($request->all(), [
             'gambar' => 'image|mimes:jpeg,png,jpg',
-            'id_sub_materi' => 'required|exists:sub_materials,id',
-            'id_kategori' => 'required|exists:category_materials,id',
+            'id_sub_materi' => 'exists:sub_materials,id',
+            'id_kategori' => 'exists:category_materials,id',
         ]);
 
         if ($validatedData->fails()) {

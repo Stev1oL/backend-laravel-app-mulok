@@ -82,10 +82,10 @@ class StudentController extends Controller
     public function editStudent($id, Request $request)
     {
         $validatedData = Validator::make($request->all(), [
-            'nama',
-            'nisn',
-            'username',
-            'id_semester',
+            'nama' => 'string',
+            'nisn' => 'unique:students,nisn',
+            'username' => 'unique:students,username',
+            'id_semester' => 'exists:semesters,id',
         ]);
 
         if ($validatedData->fails()) {
