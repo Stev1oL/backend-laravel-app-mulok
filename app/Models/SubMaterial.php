@@ -12,6 +12,7 @@ class SubMaterial extends Model
     protected $fillable = [
         'nomor_sub_materi',
         'judul_sub_materi',
+        'terjemahan_judul',
         'id_materi',
         'id_kategori',
     ];

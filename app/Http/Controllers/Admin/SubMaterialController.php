@@ -14,6 +14,7 @@ class SubMaterialController extends Controller
         $validatedData = Validator::make($request->all(), [
             'nomor_sub_materi' => 'required',
             'judul_sub_materi' => 'required|string',
+            'terjemahan_judul' => 'required|string',
             'id_materi' => 'required|exists:materials,id',
             'id_kategori' => 'required|exists:category_materials,id',
         ]);
@@ -86,6 +87,7 @@ class SubMaterialController extends Controller
         $validatedData = Validator::make($request->all(), [
             'nomor_sub_materi' => 'required',
             'judul_sub_materi' => 'required|string',
+            'terjemahan_judul' => 'required|string',
             'id_materi' => 'required|exists:materials,id',
             'id_kategori' => 'required|exists:category_materials,id',
         ]);

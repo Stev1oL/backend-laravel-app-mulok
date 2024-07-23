@@ -589,6 +589,7 @@ form-data, application/json
 ```
 nomor_sub_materi: required|integer
 judul_sub_materi: required|string
+terjemahan_judul: required|string
 id_materi: required|id_materi
 id_kategori: required|id_kategori
 ```
@@ -602,6 +603,7 @@ Example success Response:
     "sub_materi": {
         "nomor_sub_materi": "1",
         "judul_sub_materi": "Kamus Kurik",
+        "terjemahan_judul": "Kamus Kecil",
         "id_materi": "17",
         "id_kategori": "18",
         "updated_at": "2024-07-01T08:20:29.000000Z",
@@ -624,6 +626,7 @@ Example success Response:
         "id": 1,
         "nomor_sub_materi": "1",
         "judul_sub_materi": "Pasar Kahayan Lepah Bakeho",
+        "terjemahan_judul": "Pasar Kahayan Habis Terbakar",
         "id_materi": 1,
         "id_kategori": 1,
         "created_at": "2024-06-24T16:44:39.000000Z",
@@ -660,6 +663,7 @@ Example success Response:
             "id": 1,
             "nomor_sub_materi": "1",
             "judul_sub_materi": "Pasar Kahayan Lepah Bakeho",
+            "terjemahan_judul": "Pasar Kahayan Habis Terbakar",
             "id_materi": 1,
             "id_kategori": 1,
             "created_at": "2024-06-24T16:44:39.000000Z",
@@ -682,6 +686,7 @@ Example success Response:
             "id": 2,
             "nomor_sub_materi": "2",
             "judul_sub_materi": "Pasar Kahayan Lepah Bakeho",
+            "terjemahan_judul": "Pasar Kahayan Habis Terbakar",
             "id_materi": 1,
             "id_kategori": 1,
             "created_at": "2024-06-24T16:44:48.000000Z",
@@ -713,6 +718,7 @@ form-data, application/json
 ```
 nomor_sub_materi
 judul_sub_materi
+terjemahan_judul
 id_materi
 id_kategori
 ```
@@ -726,6 +732,7 @@ Example success Response:
     "sub_materi": {
         "nomor_sub_materi": "1",
         "judul_sub_materi": "Kamus Kurik",
+        "terjemahan_judul": "Kamus Kecil",
         "id_materi": "17",
         "id_kategori": "18",
         "updated_at": "2024-07-01T08:20:29.000000Z",

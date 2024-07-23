@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('nomor_sub_materi');
             $table->string('judul_sub_materi');
+            $table->string('terjemahan_judul');
             $table->unsignedBigInteger('id_materi');
             $table->unsignedBigInteger('id_kategori');
             $table->timestamps();
