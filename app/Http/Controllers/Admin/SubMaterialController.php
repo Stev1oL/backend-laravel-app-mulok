@@ -14,7 +14,7 @@ class SubMaterialController extends Controller
         $validatedData = Validator::make($request->all(), [
             'nomor_sub_materi' => 'required',
             'judul_sub_materi' => 'required|string',
-            'terjemahan_judul' => 'required|string',
+            'terjemahan_judul' => 'string',
             'id_materi' => 'required|exists:materials,id',
             'id_kategori' => 'required|exists:category_materials,id',
         ]);
@@ -29,6 +29,7 @@ class SubMaterialController extends Controller
             $submaterial = SubMaterial::create([
                 'nomor_sub_materi' => $request->nomor_sub_materi,
                 'judul_sub_materi' => $request->judul_sub_materi,
+                'terjemahan_judul' => $request->terjemahan_judul,
                 'id_materi' => $request->id_materi,
                 'id_kategori' => $request->id_kategori,
             ]);
@@ -87,7 +88,7 @@ class SubMaterialController extends Controller
         $validatedData = Validator::make($request->all(), [
             'nomor_sub_materi' => 'required',
             'judul_sub_materi' => 'required|string',
-            'terjemahan_judul' => 'required|string',
+            'terjemahan_judul' => 'string',
             'id_materi' => 'required|exists:materials,id',
             'id_kategori' => 'required|exists:category_materials,id',
         ]);
@@ -109,6 +110,7 @@ class SubMaterialController extends Controller
 
             $submaterial->nomor_sub_materi = $request['nomor_sub_materi'];
             $submaterial->judul_sub_materi = $request['judul_sub_materi'];
+            $submaterial->terjemahan_judul = $request['terjemahan_judul'];
             $submaterial->id_materi = $request['id_materi'];
             $submaterial->id_kategori = $request['id_kategori'];
 

@@ -30,13 +30,21 @@ class LoginMobileController extends Controller
             }
 
             $user = Student::where('username', $request->username)->first();
-            $pass = Student::where('password', $request->password);
-            if (!$user || !$pass) {
+
+            if (!$user) {
                 return response()->json([
                     'success' => false,
-                    'message' => 'Username & Password do not match with our records.',
+                    'message' => 'Username not found.',
                 ], 401);
             }
+
+            if ($request->password !== $user->password) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Incorrect password.',
+                ], 401);
+            }
+
             $user->makeHidden('password');
 
             return response()->json([
